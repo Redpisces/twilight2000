@@ -1,4 +1,6 @@
 # twilighttwothousand
-Fan made Twilight 2000 v2.2 module for foundry VTT
+Fan made Twilight 2000 v2.2 module for foundry VTT.
+
 Twilight 2000,  "Roleplaying in the Devastation of World War III." Published 1993 by GDW. Designed by: Fank Chadwick, Dave Nilsen, Loren K. Wiseman, Lester W. Smith
-Based on Asacolips's boilerplate https://gitlab.com/asacolips-projects/foundry-mods/boilerplate
+
+Module based on Asacolips's boilerplate https://gitlab.com/asacolips-projects/foundry-mods/boilerplate
