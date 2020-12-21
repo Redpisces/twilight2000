@@ -1,0 +1,45 @@
+{
+    "Actor": {
+        "types": ["player", "npc", "vehicle"],
+        "templates": {
+            "background": {
+                "biography": "",
+                "homeland": ""
+            },
+            "resources": {
+                "health": {
+                    "min": 0,
+                    "value": 10,
+                    "max": 10
+                }
+            }
+        },
+        "player": {
+            "templates": ["background", "resources"],
+            "ammo": {
+                "value": 5,
+                "max": 10
+            }
+        },
+        "npc": {
+            "templates": ["resources"]
+        },
+        "vehicle": {
+            "templates": ["resources"]
+        }
+    },
+    "Item": {
+        "types": ["gun"],
+        "templates": {
+            "rarity": {
+                "rarity": "common",
+                "price": 20
+            }
+        },
+        "gun": {
+            "templates": ["rarity"],
+            "damage": 5
+        }
+    }
+}
+        
