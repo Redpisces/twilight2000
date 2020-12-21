@@ -1,45 +1,61 @@
 {
-    "Actor": {
-        "types": ["player", "npc", "vehicle"],
-        "templates": {
-            "background": {
-                "biography": "",
-                "homeland": ""
-            },
-            "resources": {
-                "health": {
-                    "min": 0,
-                    "value": 10,
-                    "max": 10
-                }
-            }
+  "Actor": {
+    "types": ["character"],
+    "templates": {
+      "base": {
+        "health": {
+          "value": 10,
+          "min": 0,
+          "max": 10
         },
-        "player": {
-            "templates": ["background", "resources"],
-            "ammo": {
-                "value": 5,
-                "max": 10
-            }
-        },
-        "npc": {
-            "templates": ["resources"]
-        },
-        "vehicle": {
-            "templates": ["resources"]
+        "power": {
+          "value": 5,
+          "min": 0,
+          "max": 5
         }
+      }
     },
-    "Item": {
-        "types": ["gun"],
-        "templates": {
-            "rarity": {
-                "rarity": "common",
-                "price": 20
-            }
-        },
-        "gun": {
-            "templates": ["rarity"],
-            "damage": 5
+    "character": {
+      "templates": ["base"],
+      "biography": "",
+      "attributes": {
+        "level": {
+          "value": 1
         }
+      },
+      "abilities": {
+        "str": {
+          "value": 10
+        },
+        "dex": {
+          "value": 10
+        },
+        "con": {
+          "value": 10
+        },
+        "int": {
+          "value": 10
+        },
+        "wis": {
+          "value": 10
+        },
+        "cha": {
+          "value": 10
+        }
+      }
     }
+  },
+  "Item": {
+    "types": ["item"],
+    "templates": {
+      "base": {
+        "description": ""
+      }
+    },
+    "item": {
+      "templates": ["base"],
+      "quantity": 1,
+      "weight": 0
+    }
+  }
 }
-        
