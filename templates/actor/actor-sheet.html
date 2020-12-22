@@ -63,10 +63,10 @@
           <div class="skill-grid grid grid-3col">
             {{#each data.skills as |skill key|}}
             <div class="skill flexcol flex-group-center">
-              <div class="skill rollable" data-roll="d6+@skills.{{key}}.value" data-label="{{key}}"><label for="data.skills.{{key}}.value" class="resource-label">{{key}}</label></div>   
+              <div class="skill rollable" data-type="skillroll" data-label="{{key}}"><label for="data.skills.{{key}}.value" class="resource-label">{{key}}</label></div>   
               <div class="skill grid grid-2col">
                  <input type="text" name="data.skills.{{key}}.value" value="{{skill.value}}" data-dtype="Number"/>
-                 <select name="attr">
+                 <select class="ability_selector">
                     {{#each ../data.abilities as |ability key|}}
                         <option value="{{key}}">{{key}}</option>
                     {{/each}}

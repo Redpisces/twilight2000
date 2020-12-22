@@ -94,7 +94,25 @@ export class TwilightTwoThousandActorSheet extends ActorSheet {
     const element = event.currentTarget;
     const dataset = element.dataset;
 
-    if (dataset.roll) {
+    if (dataset.type === "skillroll"){
+ /*           let messageData={
+                user: game.user._id,
+                type: CONST.CHAT_MESSAGE_TYPES.IC,
+                content: this.actor.data.data.abilities[element.parentElement.querySelector('.ability_selector').value].value,
+                sound: null,
+            }
+            window.CONFIG.ChatMessage.entityClass.create(messageData);
+*/
+    let  ability=this.actor.data.data.abilities[element.parentElement.querySelector('.ability_selector').value].value;
+    let skill = this.actor.data.data.skills[dataset.label].value;
+    let roll = new Roll('d10+'+skill+'+'+ability, this.actor.data.data);
+    let label = dataset.label ? `Rolling ${dataset.label}` : '';
+      roll.roll().toMessage({
+        speaker: ChatMessage.getSpeaker({ actor: this.actor }),
+        flavor: label
+      });
+    }
+    else if (dataset.roll) {
       let roll = new Roll(dataset.roll, this.actor.data.data);
       let label = dataset.label ? `Rolling ${dataset.label}` : '';
       roll.roll().toMessage({
