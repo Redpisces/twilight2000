@@ -7,7 +7,7 @@ export class TwilightTwoThousandItemSheet extends ItemSheet {
   /** @override */
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
-      classes: ["twilighttwothousand", "sheet", "item"],
+      classes: ["twilight2000", "sheet", "item"],
       width: 520,
       height: 480,
       tabs: [{ navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "description" }]
@@ -16,7 +16,7 @@ export class TwilightTwoThousandItemSheet extends ItemSheet {
 
   /** @override */
   get template() {
-    const path = "systems/twilighttwothousand/templates/item";
+    const path = "systems/twilight2000/templates/item";
     // Return a single sheet for all item types.
     return `${path}/item-sheet.html`;
     // Alternatively, you could use the following return statement to do a

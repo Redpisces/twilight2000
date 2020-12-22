@@ -114,12 +114,12 @@
   justify-content: space-between;
 }
 
-/* Styles limited to twilighttwothousand sheets */
-.twilighttwothousand .item-form {
+/* Styles limited to twilight2000 sheets */
+.twilight2000 .item-form {
   font-family: "Roboto", sans-serif;
 }
 
-.twilighttwothousand .sheet-header {
+.twilight2000 .sheet-header {
   -webkit-box-flex: 0;
   -ms-flex: 0 0 210px;
   flex: 0 0 210px;
@@ -139,7 +139,7 @@
   margin-bottom: 10px;
 }
 
-.twilighttwothousand .sheet-header .profile-img {
+.twilight2000 .sheet-header .profile-img {
   -webkit-box-flex: 0;
   -ms-flex: 0 0 100px;
   flex: 0 0 100px;
@@ -147,100 +147,100 @@
   margin-right: 10px;
 }
 
-.twilighttwothousand .sheet-header .header-fields {
+.twilight2000 .sheet-header .header-fields {
   -webkit-box-flex: 1;
   -ms-flex: 1;
   flex: 1;
 }
 
-.twilighttwothousand .sheet-header h1.charname {
+.twilight2000 .sheet-header h1.charname {
   height: 50px;
   padding: 0px;
   margin: 5px 0;
   border-bottom: 0;
 }
 
-.twilighttwothousand .sheet-header h1.charname input {
+.twilight2000 .sheet-header h1.charname input {
   width: 100%;
   height: 100%;
   margin: 0;
 }
 
-.twilighttwothousand .sheet-tabs {
+.twilight2000 .sheet-tabs {
   -webkit-box-flex: 0;
   -ms-flex: 0;
   flex: 0;
 }
 
-.twilighttwothousand .sheet-body,
-.twilighttwothousand .sheet-body .tab,
-.twilighttwothousand .sheet-body .tab .editor {
+.twilight2000 .sheet-body,
+.twilight2000 .sheet-body .tab,
+.twilight2000 .sheet-body .tab .editor {
   height: 100%;
 }
 
-.twilighttwothousand .tox .tox-editor-container {
+.twilight2000 .tox .tox-editor-container {
   background: #fff;
 }
 
-.twilighttwothousand .tox .tox-edit-area {
+.twilight2000 .tox .tox-edit-area {
   padding: 0 8px;
 }
 
-.twilighttwothousand .resource-label {
+.twilight2000 .resource-label {
   font-weight: bold;
   text-transform: uppercase;
 }
 
-.twilighttwothousand .tabs {
+.twilight2000 .tabs {
   height: 40px;
   border-top: 1px solid #AAA;
   border-bottom: 1px solid #AAA;
 }
 
-.twilighttwothousand .tabs .item {
+.twilight2000 .tabs .item {
   line-height: 40px;
   font-weight: bold;
 }
 
-.twilighttwothousand .tabs .item.active {
+.twilight2000 .tabs .item.active {
   text-decoration: underline;
   text-shadow: none;
 }
 
-.twilighttwothousand .items-list {
+.twilight2000 .items-list {
   list-style: none;
   margin: 7px 0;
   padding: 0;
   overflow-y: auto;
 }
 
-.twilighttwothousand .items-list .item-header {
+.twilight2000 .items-list .item-header {
   font-weight: bold;
 }
 
-.twilighttwothousand .items-list .item {
+.twilight2000 .items-list .item {
   height: 30px;
   line-height: 24px;
   padding: 3px 0;
   border-bottom: 1px solid #BBB;
 }
 
-.twilighttwothousand .items-list .item .item-image {
+.twilight2000 .items-list .item .item-image {
   -webkit-box-flex: 0;
   -ms-flex: 0 0 24px;
   flex: 0 0 24px;
   margin-right: 5px;
 }
 
-.twilighttwothousand .items-list .item img {
+.twilight2000 .items-list .item img {
   display: block;
 }
 
-.twilighttwothousand .items-list .item-name {
+.twilight2000 .items-list .item-name {
   margin: 0;
 }
 
-.twilighttwothousand .items-list .item-controls {
+.twilight2000 .items-list .item-controls {
   -webkit-box-flex: 0;
   -ms-flex: 0 0 86px;
   flex: 0 0 86px;

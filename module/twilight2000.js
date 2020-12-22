@@ -6,7 +6,7 @@ import { TwilightTwoThousandItemSheet } from "./item/item-sheet.js";
 
 Hooks.once('init', async function() {
 
-  game.twilighttwothousand = {
+  game.twilight2000 = {
     TwilightTwoThousandActor,
     TwilightTwoThousandItem
   };
@@ -26,9 +26,9 @@ Hooks.once('init', async function() {
 
   // Register sheet application classes
   Actors.unregisterSheet("core", ActorSheet);
-  Actors.registerSheet("twilighttwothousand", TwilightTwoThousandActorSheet, { makeDefault: true });
+  Actors.registerSheet("twilight2000", TwilightTwoThousandActorSheet, { makeDefault: true });
   Items.unregisterSheet("core", ItemSheet);
-  Items.registerSheet("twilighttwothousand", TwilightTwoThousandItemSheet, { makeDefault: true });
+  Items.registerSheet("twilight2000", TwilightTwoThousandItemSheet, { makeDefault: true });
 
   // If you need to add Handlebars helpers, here are a few useful examples:
   Handlebars.registerHelper('concat', function() {

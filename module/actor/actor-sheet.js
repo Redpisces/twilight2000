@@ -7,8 +7,8 @@ export class TwilightTwoThousandActorSheet extends ActorSheet {
   /** @override */
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
-      classes: ["twilighttwothousand", "sheet", "actor"],
-      template: "systems/twilighttwothousand/templates/actor/actor-sheet.html",
+      classes: ["twilight2000", "sheet", "actor"],
+      template: "systems/twilight2000/templates/actor/actor-sheet.html",
       width: 600,
       height: 600,
       tabs: [{ navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "description" }]

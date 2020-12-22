@@ -1,5 +1,5 @@
 {
-  "name": "twilighttwothousand",
+  "name": "twilight2000",
   "title": "Twilight 2000 v2.2",
   "description": "The Twilight 2000 v2.2 system for FoundryVTT!",
   "version": "1.0.0",
@@ -7,8 +7,8 @@
   "compatibleCoreVersion": "0.7.9",
   "templateVersion": 2,
   "author": "Redpisces",
-  "esmodules": ["module/twilighttwothousand.js"],
-  "styles": ["css/twilighttwothousand.css"],
+  "esmodules": ["module/twilight2000.js"],
+  "styles": ["css/twilight2000.css"],
   "scripts": [],
   "packs": [],
   "languages": [
