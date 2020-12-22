@@ -42,7 +42,330 @@
         "int": {
           "value": 1
         }
-      }
+      },
+       "skills": {
+                "Aircraft_Mechanic": {
+                    "value": 0,
+                    "trained": 0,
+                    "attribute": "str"
+                },
+                "Archery": {
+                    "value": 0,
+                    "trained": 0,
+                    "attribute": "str"
+                },
+                "Armed_Martial_Arts": {
+                    "value": 0,
+                    "trained": 0,
+                    "attribute": "str"
+                },
+                "Autogun": {
+                    "value": 0,
+                    "trained": 0,
+                    "attribute": "str"
+                },
+                "Grenade_Launcher": {
+                    "value": 0,
+                    "trained": 0,
+                    "attribute": "str"
+                },
+                "Heavy_Artillery": {
+                    "value": 0,
+                    "trained": 0,
+                    "attribute": "str"
+                },
+                "Heavy_Gun": {
+                    "value": 0,
+                    "trained": 0,
+                    "attribute": "str"
+                },
+                "Mechanic": {
+                    "value": 0,
+                    "trained": 0,
+                    "attribute": "str"
+                },
+                "Small_Arms_Pistol": {
+                    "value": 0,
+                    "trained": 0,
+                    "attribute": "str"
+                },
+                "Small_Arms_Rifle": {
+                    "value": 0,
+                    "trained": 0,
+                    "attribute": "str"
+                },
+                "Thrown_Weapon": {
+                    "value": 0,
+                    "trained": 0,
+                    "attribute": "str"
+                },
+                "Unarmed_Martial_Arts": {
+                    "value": 0,
+                    "trained": 0,
+                    "attribute": "str"
+                },
+
+                "Climbing": {
+                    "value": 0,
+                    "trained": 0,
+                    "attribute": "con"
+                },
+                "Combat Engineer": {
+                    "value": 0,
+                    "trained": 0,
+                    "attribute": "con"
+                },
+                "Parachute": {
+                    "value": 0,
+                    "trained": 0,
+                    "attribute": "con"
+                },
+                "Riding": {
+                    "value": 0,
+                    "trained": 0,
+                    "attribute": "con"
+                },
+                "Scuba": {
+                    "value": 0,
+                    "trained": 0,
+                    "attribute": "con"
+                },
+                "Small_Watercraft": {
+                    "value": 0,
+                    "trained": 0,
+                    "attribute": "con"
+                },
+                "Swimming": {
+                    "value": 0,
+                    "trained": 0,
+                    "attribute": "con"
+                },
+                "Acrobatics": {
+                    "value": 0,
+                    "trained": 0,
+                    "attribute": "agi"
+                },
+                "Forgery": {
+                    "value": 0,
+                    "trained": 0,
+                    "attribute": "agi"
+                },
+                "Ground_Vehicle_Motorcycle": {
+                    "value": 0,
+                    "trained": 0,
+                    "attribute": "agi"
+                },
+                "Ground_Vehicle_Tracked": {
+                    "value": 0,
+                    "trained": 0,
+                    "attribute": "agi"
+                },
+                "Ground_Vehicle_Wheeled": {
+                    "value": 0,
+                    "trained": 0,
+                    "attribute": "agi"
+                },
+                "Gunsmith": {
+                    "value": 0,
+                    "trained": 0,
+                    "attribute": "agi"
+                },
+                "Hovercraft": {
+                    "value": 0,
+                    "trained": 0,
+                    "attribute": "agi"
+                },
+                "Intrusion": {
+                    "value": 0,
+                    "trained": 0,
+                    "attribute": "agi"
+                },
+                "Machinist": {
+                    "value": 0,
+                    "trained": 0,
+                    "attribute": "agi"
+                },
+                "Pilot_Fixed-Wing": {
+                    "value": 0,
+                    "trained": 0,
+                    "attribute": "agi"
+                },
+                "Pilot_Rotary-Wing": {
+                    "value": 0,
+                    "trained": 0,
+                    "attribute": "agi"
+                },
+                "Snow_Skiing": {
+                    "value": 0,
+                    "trained": 0,
+                    "attribute": "agi"
+                },
+                "Stealth": {
+                    "value": 0,
+                    "trained": 0,
+                    "attribute": "agi"
+                },
+                "Tac_Missile": {
+                    "value": 0,
+                    "trained": 0,
+                    "attribute": "agi"
+                },
+                "Warhead": {
+                    "value": 0,
+                    "trained": 0,
+                    "attribute": "agi"
+                },
+                "Biology": {
+                    "value": 0,
+                    "trained": 0,
+                    "attribute": "edu"
+                },
+                "Chemistry": {
+                    "value": 0,
+                    "trained": 0,
+                    "attribute": "edu"
+                },
+                "Civil_Engineer": {
+                    "value": 0,
+                    "trained": 0,
+                    "attribute": "edu"
+                },
+                "Computer": {
+                    "value": 0,
+                    "trained": 0,
+                    "attribute": "edu"
+                },
+                "Electronics": {
+                    "value": 0,
+                    "trained": 0,
+                    "attribute": "edu"
+                },
+                "Excavation": {
+                    "value": 0,
+                    "trained": 0,
+                    "attribute": "edu"
+                },
+                "Geology": {
+                    "value": 0,
+                    "trained": 0,
+                    "attribute": "edu"
+                },
+                "Medical_Diagnosis": {
+                    "value": 0,
+                    "trained": 0,
+                    "attribute": "edu"
+                },
+                "Medical_Trauma_Aid": {
+                    "value": 0,
+                    "trained": 0,
+                    "attribute": "edu"
+                },
+                "Medical_Surgery": {
+                    "value": 0,
+                    "trained": 0,
+                    "attribute": "edu"
+                },
+                "Metallurgy": {
+                    "value": 0,
+                    "trained": 0,
+                    "attribute": "edu"
+                },
+                "Meteorology": {
+                    "value": 0,
+                    "trained": 0,
+                    "attribute": "edu"
+                },
+                "Disguise": {
+                    "value": 0,
+                    "trained": 0,
+                    "attribute": "cha"
+                },
+                "Instruction": {
+                    "value": 0,
+                    "trained": 0,
+                    "attribute": "cha"
+                },
+                "Interrogation": {
+                    "value": 0,
+                    "trained": 0,
+                    "attribute": "cha"
+                },
+                "Language1": {
+                    "value": 0,
+                    "trained": 0,
+                    "dialect": "",
+                    "attribute": "cha"
+                },
+                "Language2": {
+                    "value": 0,
+                    "trained": 0,
+                    "dialect": "",
+                    "attribute": "cha"
+                },
+                "Language3": {
+                    "value": 0,
+                    "trained": 0,
+                    "dialect": "",
+                    "attribute": "cha"
+                },
+                "Language4": {
+                    "value": 0,
+                    "trained": 0,
+                    "dialect": "",
+                    "attribute": "cha"
+                },
+                "Language5": {
+                    "value": 0,
+                    "trained": 0,
+                    "dialect": "",
+                    "attribute": "cha"
+                },
+                "Leadership": {
+                    "value": 0,
+                    "trained": 0,
+                    "attribute": "cha"
+                },
+                "Persuasion": {
+                    "value": 0,
+                    "trained": 0,
+                    "attribute": "cha"
+                },
+                "Farming": {
+                    "value": 0,
+                    "trained": 0,
+                    "attribute": "int"
+                },
+                "Forward_Observer": {
+                    "value": 0,
+                    "trained": 0,
+                    "attribute": "int"
+                },
+                "Navigation": {
+                    "value": 0,
+                    "trained": 0,
+                    "attribute": "int"
+                },
+                "Observation": {
+                    "value": 0,
+                    "trained": 0,
+                    "attribute": "int"
+                },
+                "Scrounging": {
+                    "value": 0,
+                    "trained": 0,
+                    "attribute": "int"
+                },
+                "Survival": {
+                    "value": 0,
+                    "trained": 0,
+                    "attribute": "int"
+                },
+                "Tracking": {
+                    "value": 0,
+                    "trained": 0,
+                    "attribute": "int"
+                }
+            }
     }
   },
   "Item": {

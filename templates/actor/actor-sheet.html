@@ -47,15 +47,31 @@
             {{editor content=data.biography target="data.biography" button=true owner=owner editable=editable}}
         </div>
         <div class="tab skills" data-group="primary" data-tab="skills">
-        {{!-- The grid classes are defined in scss/global/_grid.scss. To use,
-          use both the "grid" and "grid-Ncol" class where "N" can be any number
-          from 1 to 12 and will create that number of columns.  --}}
+
           <div class="abilities flexrow">
             {{#each data.abilities as |ability key|}}
               <div class="ability flexrow flex-group-center">
-                <span class="ability-mod rollable" data-roll="d6+@abilities.{{key}}.mod" data-label="{{key}}"><label for="data.abilities.{{key}}.value" class="resource-label">{{key}}</label></span>
+                <span class="ability-mod rollable" data-roll="d6+@abilities.{{key}}.value" data-label="{{key}}"><label for="data.abilities.{{key}}.value" class="resource-label">{{key}}</label></span>
                 <input type="text" name="data.abilities.{{key}}.value" value="{{ability.value}}" data-dtype="Number"/>
                 
+              </div>
+            {{/each}}
+          </div>
+          {{!-- The grid classes are defined in scss/global/_grid.scss. To use,
+          use both the "grid" and "grid-Ncol" class where "N" can be any number
+          from 1 to 12 and will create that number of columns.  --}}
+          <div class="skill-grid grid grid-3col">
+            {{#each data.skills as |skill key|}}
+            <div class="skill flexcol flex-group-center">
+              <div class="skill rollable" data-roll="d6+@skills.{{key}}.value" data-label="{{key}}"><label for="data.skills.{{key}}.value" class="resource-label">{{key}}</label></div>   
+              <div class="skill grid grid-2col">
+                 <input type="text" name="data.skills.{{key}}.value" value="{{skill.value}}" data-dtype="Number"/>
+                 <select name="attr">
+                    {{#each ../data.abilities as |ability key|}}
+                        <option value="{{key}}">{{key}}</option>
+                    {{/each}}
+                 </select>
+              </div>
               </div>
             {{/each}}
           </div>
