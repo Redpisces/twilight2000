@@ -63,12 +63,16 @@
           <div class="skill-grid grid grid-3col">
             {{#each data.skills as |skill key|}}
             <div class="skill flexcol flex-group-center">
-              <div class="skill rollable" data-type="skillroll" data-label="{{key}}"><label for="data.skills.{{key}}.value" class="resource-label">{{key}}</label></div>   
+              <div class="skill rollable" data-type="skillroll" data-label="{{key}}"><label for="data.skills.{{key}}.value" class="resource-label">{{this.print}}</label></div>   
               <div class="skill grid grid-2col">
                  <input type="text" name="data.skills.{{key}}.value" value="{{skill.value}}" data-dtype="Number"/>
                  <select class="ability_selector">
                     {{#each ../data.abilities as |ability key|}}
-                        <option value="{{key}}">{{key}}</option>
+                        {{#ifEquals key ../this.ability}}
+                            <option selected value="{{key}}">{{@key}}</option>
+                        {{else}}
+                            <option value="{{key}}">{{@key}}</option>
+                        {{/ifEquals}}
                     {{/each}}
                  </select>
               </div>

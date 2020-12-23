@@ -99,13 +99,13 @@
                 "trained": 0
                 },
             "small_arms_pistol": {
-                "print": "Small Arms Pistol",
+                "print": "Small Arms (Pistol)",
                 "ability": "str",
                 "value": 0,
                 "trained": 0
                 },
             "small_arms_rifle": {
-                "print": "Small Arms Rifle",
+                "print": "Small Arms (Rifle)",
                 "ability": "str",
                 "value": 0,
                 "trained": 0
@@ -177,19 +177,19 @@
                 "trained": 0
                 },
             "ground_vehicle_motorcycle": {
-                "print": "Ground Vehicle Motorcycle",
+                "print": "Ground Vehicle (Motorcycle)",
                 "ability": "agi",
                 "value": 0,
                 "trained": 0
                 },
             "ground_vehicle_tracked": {
-                "print": "Ground Vehicle Tracked",
+                "print": "Ground Vehicle (Tracked)",
                 "ability": "agi",
                 "value": 0,
                 "trained": 0
                 },
             "ground_vehicle_wheeled": {
-                "print": "Ground Vehicle Wheeled",
+                "print": "Ground Vehicle (Wheeled)",
                 "ability": "agi",
                 "value": 0,
                 "trained": 0
@@ -219,13 +219,13 @@
                 "trained": 0
                 },
             "pilot_fixed-wing": {
-                "print": "Pilot Fixed-Wing",
+                "print": "Pilot (Fixed-Wing)",
                 "ability": "agi",
                 "value": 0,
                 "trained": 0
                 },
             "pilot_rotary-wing": {
-                "print": "Pilot Rotary-Wing",
+                "print": "Pilot (Rotary-Wing)",
                 "ability": "agi",
                 "value": 0,
                 "trained": 0
@@ -297,19 +297,19 @@
                 "trained": 0
                 },
             "medical_diagnosis": {
-                "print": "Medical Diagnosis",
+                "print": "Medical (Diagnosis)",
                 "ability": "edu",
                 "value": 0,
                 "trained": 0
                 },
             "medical_trauma_aid": {
-                "print": "Medical Trauma Aid",
+                "print": "Medical (Trauma Aid)",
                 "ability": "edu",
                 "value": 0,
                 "trained": 0
                 },
             "medical_surgery": {
-                "print": "Medical Surgery",
+                "print": "Medical (Surgery)",
                 "ability": "edu",
                 "value": 0,
                 "trained": 0
