@@ -59,7 +59,7 @@
             <div class="skill flexcol flex-group-center">
               <div class="skill rollable" data-type="skillroll" data-label="{{key}}"><label for="data.skills.{{key}}.value" class="resource-label">{{this.print}}</label></div>   
               <div class="skill grid grid-2col">
-                 <input type="text" name="data.skills.{{key}}.value" value="{{skill.value}}" data-dtype="Number"/>
+                 <input type="number" name="data.skills.{{key}}.value" value="{{skill.value}}" data-dtype="Number"/>
                  <select class="ability_selector">
                     {{#each ../data.abilities as |ability key|}}
                         {{#ifEquals key ../this.ability}}
