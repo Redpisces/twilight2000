@@ -32,6 +32,23 @@ export class TwilightTwoThousandActor extends Actor {
       // Calculate the modifier using d20 rules.
       ability.mod = Math.floor((ability.value - 10) / 2);
     }
+    
+    for (let [key, part] of Object.entries(data.health)){
+    var hitCapacity;
+        if (key === 'chest'){
+            hitCapacity = data.abilities.con.value*3;
+            
+        } else if (key==='head'){
+            hitCapacity = data.abilities.con.value*2;
+        }
+        else {
+            hitCapacity = data.abilities.con.value+data.abilities.str.value;
+        }
+        part.th_scratch = "1"+"-"+Math.floor(hitCapacity/2);
+        part.th_slight = Math.floor(hitCapacity/2)+"-"+hitCapacity;
+        part.th_serious = hitCapacity+"-"+hitCapacity*2;
+        part.th_critical = hitCapacity*2+1+"+";
+    }
   }
 
 }

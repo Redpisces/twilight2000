@@ -3,7 +3,6 @@ import { TwilightTwoThousandActor } from "./actor/actor.js";
 import { TwilightTwoThousandActorSheet } from "./actor/actor-sheet.js";
 import { TwilightTwoThousandItem } from "./item/item.js";
 import { TwilightTwoThousandItemSheet } from "./item/item-sheet.js";
-
 Hooks.once('init', async function() {
 
   game.twilight2000 = {
@@ -20,6 +19,7 @@ Hooks.once('init', async function() {
     decimals: 2
   };
 
+  
   // Define custom Entity classes
   CONFIG.Actor.entityClass = TwilightTwoThousandActor;
   CONFIG.Item.entityClass = TwilightTwoThousandItem;
