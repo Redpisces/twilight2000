@@ -25,348 +25,413 @@
       },
       "abilities": {
         "str": {
-          "value": 1
+            "print": "Strength",
+            "value": 1
         },
         "con": {
-          "value": 1
+            "print": "Constitution",
+            "value": 1
         },
         "agi": {
-          "value": 1
+            "print": "Agility",
+            "value": 1
         },
         "edu": {
-          "value": 1
+            "print": "Education",
+            "value": 1
         },
         "cha": {
-          "value": 1
+            "print": "Charisma",
+            "value": 1
         },
         "int": {
-          "value": 1
+            "print": "Intelligence",
+            "value": 1
         }
       },
        "skills": {
-                "Aircraft_Mechanic": {
-                    "value": 0,
-                    "trained": 0,
-                    "attribute": "str"
+            "aircraft_mechanic": {
+                "print": "Aircraft Mechanic",
+                "ability": "str",
+                "value": 0,
+                "trained": 0
                 },
-                "Archery": {
-                    "value": 0,
-                    "trained": 0,
-                    "attribute": "str"
+            "archery": {
+                "print": "Archery",
+                "ability": "str",
+                "value": 0,
+                "trained": 0
                 },
-                "Armed_Martial_Arts": {
-                    "value": 0,
-                    "trained": 0,
-                    "attribute": "str"
+            "armed_martial_arts": {
+                "print": "Armed Martial Arts",
+                "ability": "str",
+                "value": 0,
+                "trained": 0
                 },
-                "Autogun": {
-                    "value": 0,
-                    "trained": 0,
-                    "attribute": "str"
+            "autogun": {
+                "print": "Autogun",
+                "ability": "str",
+                "value": 0,
+                "trained": 0
                 },
-                "Grenade_Launcher": {
-                    "value": 0,
-                    "trained": 0,
-                    "attribute": "str"
+            "grenade_launcher": {
+                "print": "Grenade Launcher",
+                "ability": "str",
+                "value": 0,
+                "trained": 0
                 },
-                "Heavy_Artillery": {
-                    "value": 0,
-                    "trained": 0,
-                    "attribute": "str"
+            "heavy_artillery": {
+                "print": "Heavy Artillery",
+                "ability": "str",
+                "value": 0,
+                "trained": 0
                 },
-                "Heavy_Gun": {
-                    "value": 0,
-                    "trained": 0,
-                    "attribute": "str"
+            "heavy_gun": {
+                "print": "Heavy Gun",
+                "ability": "str",
+                "value": 0,
+                "trained": 0
                 },
-                "Mechanic": {
-                    "value": 0,
-                    "trained": 0,
-                    "attribute": "str"
+            "mechanic": {
+                "print": "Mechanic",
+                "ability": "str",
+                "value": 0,
+                "trained": 0
                 },
-                "Small_Arms_Pistol": {
-                    "value": 0,
-                    "trained": 0,
-                    "attribute": "str"
+            "small_arms_pistol": {
+                "print": "Small Arms Pistol",
+                "ability": "str",
+                "value": 0,
+                "trained": 0
                 },
-                "Small_Arms_Rifle": {
-                    "value": 0,
-                    "trained": 0,
-                    "attribute": "str"
+            "small_arms_rifle": {
+                "print": "Small Arms Rifle",
+                "ability": "str",
+                "value": 0,
+                "trained": 0
                 },
-                "Thrown_Weapon": {
-                    "value": 0,
-                    "trained": 0,
-                    "attribute": "str"
+            "thrown_weapon": {
+                "print": "Thrown Weapon",
+                "ability": "str",
+                "value": 0,
+                "trained": 0
                 },
-                "Unarmed_Martial_Arts": {
-                    "value": 0,
-                    "trained": 0,
-                    "attribute": "str"
+            "unarmed_martial_arts": {
+                "print": "Unarmed Martial Arts",
+                "ability": "str",
+                "value": 0,
+                "trained": 0
                 },
-
-                "Climbing": {
-                    "value": 0,
-                    "trained": 0,
-                    "attribute": "con"
+            "climbing": {
+                "print": "Climbing",
+                "ability": "con",
+                "value": 0,
+                "trained": 0
                 },
-                "Combat Engineer": {
-                    "value": 0,
-                    "trained": 0,
-                    "attribute": "con"
+            "combat engineer": {
+                "print": "Combat Engineer",
+                "ability": "con",
+                "value": 0,
+                "trained": 0
                 },
-                "Parachute": {
-                    "value": 0,
-                    "trained": 0,
-                    "attribute": "con"
+            "parachute": {
+                "print": "Parachute",
+                "ability": "con",
+                "value": 0,
+                "trained": 0
                 },
-                "Riding": {
-                    "value": 0,
-                    "trained": 0,
-                    "attribute": "con"
+            "riding": {
+                "print": "Riding",
+                "ability": "con",
+                "value": 0,
+                "trained": 0
                 },
-                "Scuba": {
-                    "value": 0,
-                    "trained": 0,
-                    "attribute": "con"
+            "scuba": {
+                "print": "Scuba",
+                "ability": "con",
+                "value": 0,
+                "trained": 0
                 },
-                "Small_Watercraft": {
-                    "value": 0,
-                    "trained": 0,
-                    "attribute": "con"
+            "small_watercraft": {
+                "print": "Small Watercraft",
+                "ability": "con",
+                "value": 0,
+                "trained": 0
                 },
-                "Swimming": {
-                    "value": 0,
-                    "trained": 0,
-                    "attribute": "con"
+            "swimming": {
+                "print": "Swimming",
+                "ability": "con",
+                "value": 0,
+                "trained": 0
                 },
-                "Acrobatics": {
-                    "value": 0,
-                    "trained": 0,
-                    "attribute": "agi"
+            "acrobatics": {
+                "print": "Acrobatics",
+                "ability": "agi",
+                "value": 0,
+                "trained": 0
                 },
-                "Forgery": {
-                    "value": 0,
-                    "trained": 0,
-                    "attribute": "agi"
+            "forgery": {
+                "print": "Forgery",
+                "ability": "agi",
+                "value": 0,
+                "trained": 0
                 },
-                "Ground_Vehicle_Motorcycle": {
-                    "value": 0,
-                    "trained": 0,
-                    "attribute": "agi"
+            "ground_vehicle_motorcycle": {
+                "print": "Ground Vehicle Motorcycle",
+                "ability": "agi",
+                "value": 0,
+                "trained": 0
                 },
-                "Ground_Vehicle_Tracked": {
-                    "value": 0,
-                    "trained": 0,
-                    "attribute": "agi"
+            "ground_vehicle_tracked": {
+                "print": "Ground Vehicle Tracked",
+                "ability": "agi",
+                "value": 0,
+                "trained": 0
                 },
-                "Ground_Vehicle_Wheeled": {
-                    "value": 0,
-                    "trained": 0,
-                    "attribute": "agi"
+            "ground_vehicle_wheeled": {
+                "print": "Ground Vehicle Wheeled",
+                "ability": "agi",
+                "value": 0,
+                "trained": 0
                 },
-                "Gunsmith": {
-                    "value": 0,
-                    "trained": 0,
-                    "attribute": "agi"
+            "gunsmith": {
+                "print": "Gunsmith",
+                "ability": "agi",
+                "value": 0,
+                "trained": 0
                 },
-                "Hovercraft": {
-                    "value": 0,
-                    "trained": 0,
-                    "attribute": "agi"
+            "hovercraft": {
+                "print": "Hovercraft",
+                "ability": "agi",
+                "value": 0,
+                "trained": 0
                 },
-                "Intrusion": {
-                    "value": 0,
-                    "trained": 0,
-                    "attribute": "agi"
+            "intrusion": {
+                "print": "Intrusion",
+                "ability": "agi",
+                "value": 0,
+                "trained": 0
                 },
-                "Machinist": {
-                    "value": 0,
-                    "trained": 0,
-                    "attribute": "agi"
+            "machinist": {
+                "print": "Machinist",
+                "ability": "agi",
+                "value": 0,
+                "trained": 0
                 },
-                "Pilot_Fixed-Wing": {
-                    "value": 0,
-                    "trained": 0,
-                    "attribute": "agi"
+            "pilot_fixed-wing": {
+                "print": "Pilot Fixed-Wing",
+                "ability": "agi",
+                "value": 0,
+                "trained": 0
                 },
-                "Pilot_Rotary-Wing": {
-                    "value": 0,
-                    "trained": 0,
-                    "attribute": "agi"
+            "pilot_rotary-wing": {
+                "print": "Pilot Rotary-Wing",
+                "ability": "agi",
+                "value": 0,
+                "trained": 0
                 },
-                "Snow_Skiing": {
-                    "value": 0,
-                    "trained": 0,
-                    "attribute": "agi"
+            "snow_skiing": {
+                "print": "Snow Skiing",
+                "ability": "agi",
+                "value": 0,
+                "trained": 0
                 },
-                "Stealth": {
-                    "value": 0,
-                    "trained": 0,
-                    "attribute": "agi"
+            "stealth": {
+                "print": "Stealth",
+                "ability": "agi",
+                "value": 0,
+                "trained": 0
                 },
-                "Tac_Missile": {
-                    "value": 0,
-                    "trained": 0,
-                    "attribute": "agi"
+            "tac_missile": {
+                "print": "Tac Missile",
+                "ability": "agi",
+                "value": 0,
+                "trained": 0
                 },
-                "Warhead": {
-                    "value": 0,
-                    "trained": 0,
-                    "attribute": "agi"
+            "warhead": {
+                "print": "Warhead",
+                "ability": "agi",
+                "value": 0,
+                "trained": 0
                 },
-                "Biology": {
-                    "value": 0,
-                    "trained": 0,
-                    "attribute": "edu"
+            "biology": {
+                "print": "Biology",
+                "ability": "edu",
+                "value": 0,
+                "trained": 0
                 },
-                "Chemistry": {
-                    "value": 0,
-                    "trained": 0,
-                    "attribute": "edu"
+            "chemistry": {
+                "print": "Chemistry",
+                "ability": "edu",
+                "value": 0,
+                "trained": 0
                 },
-                "Civil_Engineer": {
-                    "value": 0,
-                    "trained": 0,
-                    "attribute": "edu"
+            "civil_engineer": {
+                "print": "Civil Engineer",
+                "ability": "edu",
+                "value": 0,
+                "trained": 0
                 },
-                "Computer": {
-                    "value": 0,
-                    "trained": 0,
-                    "attribute": "edu"
+            "computer": {
+                "print": "Computer",
+                "ability": "edu",
+                "value": 0,
+                "trained": 0
                 },
-                "Electronics": {
-                    "value": 0,
-                    "trained": 0,
-                    "attribute": "edu"
+            "electronics": {
+                "print": "Electronics",
+                "ability": "edu",
+                "value": 0,
+                "trained": 0
                 },
-                "Excavation": {
-                    "value": 0,
-                    "trained": 0,
-                    "attribute": "edu"
+            "excavation": {
+                "print": "Excavation",
+                "ability": "edu",
+                "value": 0,
+                "trained": 0
                 },
-                "Geology": {
-                    "value": 0,
-                    "trained": 0,
-                    "attribute": "edu"
+            "geology": {
+                "print": "Geology",
+                "ability": "edu",
+                "value": 0,
+                "trained": 0
                 },
-                "Medical_Diagnosis": {
-                    "value": 0,
-                    "trained": 0,
-                    "attribute": "edu"
+            "medical_diagnosis": {
+                "print": "Medical Diagnosis",
+                "ability": "edu",
+                "value": 0,
+                "trained": 0
                 },
-                "Medical_Trauma_Aid": {
-                    "value": 0,
-                    "trained": 0,
-                    "attribute": "edu"
+            "medical_trauma_aid": {
+                "print": "Medical Trauma Aid",
+                "ability": "edu",
+                "value": 0,
+                "trained": 0
                 },
-                "Medical_Surgery": {
-                    "value": 0,
-                    "trained": 0,
-                    "attribute": "edu"
+            "medical_surgery": {
+                "print": "Medical Surgery",
+                "ability": "edu",
+                "value": 0,
+                "trained": 0
                 },
-                "Metallurgy": {
-                    "value": 0,
-                    "trained": 0,
-                    "attribute": "edu"
+            "metallurgy": {
+                "print": "Metallurgy",
+                "ability": "edu",
+                "value": 0,
+                "trained": 0
                 },
-                "Meteorology": {
-                    "value": 0,
-                    "trained": 0,
-                    "attribute": "edu"
+            "meteorology": {
+                "print": "Meteorology",
+                "ability": "edu",
+                "value": 0,
+                "trained": 0
                 },
-                "Disguise": {
-                    "value": 0,
-                    "trained": 0,
-                    "attribute": "cha"
+            "disguise": {
+                "print": "Disguise",
+                "ability": "cha",
+                "value": 0,
+                "trained": 0
                 },
-                "Instruction": {
-                    "value": 0,
-                    "trained": 0,
-                    "attribute": "cha"
+            "instruction": {
+                "print": "Instruction",
+                "ability": "cha",
+                "value": 0,
+                "trained": 0
                 },
-                "Interrogation": {
-                    "value": 0,
-                    "trained": 0,
-                    "attribute": "cha"
+            "interrogation": {
+                "print": "Interrogation",
+                "ability": "cha",
+                "value": 0,
+                "trained": 0
                 },
-                "Language1": {
-                    "value": 0,
-                    "trained": 0,
-                    "dialect": "",
-                    "attribute": "cha"
+            "language1": {
+                "print": "Language1",
+                "ability": "cha",
+                "value": 0,
+                "trained": 0
                 },
-                "Language2": {
-                    "value": 0,
-                    "trained": 0,
-                    "dialect": "",
-                    "attribute": "cha"
+            "language2": {
+                "print": "Language2",
+                "ability": "cha",
+                "value": 0,
+                "trained": 0
                 },
-                "Language3": {
-                    "value": 0,
-                    "trained": 0,
-                    "dialect": "",
-                    "attribute": "cha"
+            "language3": {
+                "print": "Language3",
+                "ability": "cha",
+                "value": 0,
+                "trained": 0
                 },
-                "Language4": {
-                    "value": 0,
-                    "trained": 0,
-                    "dialect": "",
-                    "attribute": "cha"
+            "language4": {
+                "print": "Language4",
+                "ability": "cha",
+                "value": 0,
+                "trained": 0
                 },
-                "Language5": {
-                    "value": 0,
-                    "trained": 0,
-                    "dialect": "",
-                    "attribute": "cha"
+            "language5": {
+                "print": "Language5",
+                "ability": "cha",
+                "value": 0,
+                "trained": 0
                 },
-                "Leadership": {
-                    "value": 0,
-                    "trained": 0,
-                    "attribute": "cha"
+            "leadership": {
+                "print": "Leadership",
+                "ability": "cha",
+                "value": 0,
+                "trained": 0
                 },
-                "Persuasion": {
-                    "value": 0,
-                    "trained": 0,
-                    "attribute": "cha"
+            "persuasion": {
+                "print": "Persuasion",
+                "ability": "cha",
+                "value": 0,
+                "trained": 0
                 },
-                "Farming": {
-                    "value": 0,
-                    "trained": 0,
-                    "attribute": "int"
+            "farming": {
+                "print": "Farming",
+                "ability": "int",
+                "value": 0,
+                "trained": 0
                 },
-                "Forward_Observer": {
-                    "value": 0,
-                    "trained": 0,
-                    "attribute": "int"
+            "forward_observer": {
+                "print": "Forward Observer",
+                "ability": "int",
+                "value": 0,
+                "trained": 0
                 },
-                "Navigation": {
-                    "value": 0,
-                    "trained": 0,
-                    "attribute": "int"
+            "navigation": {
+                "print": "Navigation",
+                "ability": "int",
+                "value": 0,
+                "trained": 0
                 },
-                "Observation": {
-                    "value": 0,
-                    "trained": 0,
-                    "attribute": "int"
+            "observation": {
+                "print": "Observation",
+                "ability": "int",
+                "value": 0,
+                "trained": 0
                 },
-                "Scrounging": {
-                    "value": 0,
-                    "trained": 0,
-                    "attribute": "int"
+            "scrounging": {
+                "print": "Scrounging",
+                "ability": "int",
+                "value": 0,
+                "trained": 0
                 },
-                "Survival": {
-                    "value": 0,
-                    "trained": 0,
-                    "attribute": "int"
+            "survival": {
+                "print": "Survival",
+                "ability": "int",
+                "value": 0,
+                "trained": 0
                 },
-                "Tracking": {
-                    "value": 0,
-                    "trained": 0,
-                    "attribute": "int"
+            "tracking": {
+                "print": "Tracking",
+                "ability": "int",
+                "value": 0,
+                "trained": 0
                 }
             }
-    }
+
+       }
+    
   },
   "Item": {
     "types": ["item"],
