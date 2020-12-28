@@ -3,27 +3,12 @@
     {{!-- Sheet Header --}}
     <header class="sheet-header">
         <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="100" width="100"/>
-        <div class="header-fields">
-            <h1 class="charname"><input name="name" type="text" value="{{actor.name}}" placeholder="Name"/></h1>
-             <div class="abilities flexrow">
-            {{#each data.abilities as |ability key|}}
-              <div class="ability flexrow flex-group-center">
-                <span class="ability-mod rollable" data-roll="d6+@abilities.{{key}}.value" data-label="{{key}}"><label for="data.abilities.{{key}}.value" class="resource-label">{{key}}</label></span>
-                <input type="text" name="data.abilities.{{key}}.value" value="{{ability.value}}" data-dtype="Number"/>
-                
-              </div>
-            {{/each}}
-          </div>
-            Make sure to deselect fields before exiting browser
-          </div>
-
-        </div>
+        <h1 class="charname"><input name="name" type="text" value="{{actor.name}}" placeholder="Name"/></h1>
     </header>
 
     {{!-- Sheet Tab Navigation --}}
     <nav class="sheet-tabs tabs" data-group="primary">
-        <a class="item" data-tab="description">Description</a>
-        <a class="item" data-tab="skills">Skills</a>
+        <a class="item" data-tab="skills">Description</a>
         <a class="item" data-tab="health">Health</a>
         <a class="item" data-tab="items">Items</a>
     </nav>
@@ -31,94 +16,80 @@
     {{!-- Sheet Body --}}
     <section class="sheet-body">
 
-        {{!-- Biography Tab --}}
-        <div class="tab biography" data-group="primary" data-tab="description">
-            <div class="attr-grid grid grid-4col">
-            {{#each data.attributes as |attr key|}}
-                <div>{{@key}}:<input type="text" name="data.attributes.{{key}}" value="{{this}}"/></div>
-            {{/each}}
-            </div>
-            <div class="flexrow flex-group-center">
-                <div class="flexcol flex-group-top">
-                    <div>Contacts:</div>
-                    <textarea name="data.contacts" content="data.contacts" data-dtype="String" target="data.contacts" button=true owner=owner editable=editable>{{data.contacts}}</textarea>
+        {{!-- Skills Tab --}}
+        <div class="tab skill-list" data-group="primary" data-tab="skills">
+            <div class="skills grid grid-3col">
+                {{#each data.attributes as |group akey|}}
+                <div>
+                    <div class="attribute flexrow flex-group-center">
+                        <label for="data.attributes.{{akey}}.value" class="resource-label">{{akey}}</label>
+                        <input type="number" name="data.attributes.{{akey}}.value" value="{{group.value}}" data-dtype="Number"/>
+                    </div>
+                    <table table-layout="fixed">
+                        {{#each skills as |skill skey|}}
+                        <tr>
+                            <td><label for="data.attributes.{{akey}}.skills.{{skey}}">{{skey}} </label></td>
+                            <td><input type="number" name="data.attributes.{{akey}}.skills.{{skey}}" value="{{skill}}" data-dtype="Number"/></td>
+                        </tr>
+                        {{/each}}
+                    </table>
                 </div>
-                <div class="flexcol flex-group-top">
-                    <div>Biography:</div>
-                    <textarea name="data.biography" content="data.biography" data-dtype="String" target="data.biography" button=true owner=owner editable=editable>{{data.biography}}</textarea>
-                </div>
-            </div>
-        </div>
-        <div class="tab skills" data-group="primary" data-tab="skills">
-
-          {{!-- The grid classes are defined in scss/global/_grid.scss. To use,
-          use both the "grid" and "grid-Ncol" class where "N" can be any number
-          from 1 to 12 and will create that number of columns.  --}}
-          <div class="skill-grid grid grid-3col">
-            {{#each data.skills as |skill key|}}
-            <div class="skill flexcol flex-group-center">
-              <div class="skill rollable" data-type="skillroll" data-label="{{key}}"><label for="data.skills.{{key}}.value" class="resource-label">{{this.print}}</label></div>   
-              <div class="skill grid grid-2col">
-                 <input type="number" name="data.skills.{{key}}.value" value="{{skill.value}}" data-dtype="Number"/>
-                 <select class="ability_selector">
-                    {{#each ../data.abilities as |ability key|}}
-                        {{#ifEquals key ../this.ability}}
-                            <option selected value="{{key}}">{{@key}}</option>
-                        {{else}}
-                            <option value="{{key}}">{{@key}}</option>
-                        {{/ifEquals}}
-                    {{/each}}
-                 </select>
-                 <span>Difficulty:</span>
-                 <select class="difficulty_selector">
-                    <option value=4>Easy</option>
-                    <option selected value=2>Average</option>
-                    <option value=1>Difficult</option>
-                    <option value=0.5>Formidable</option>
-                    <option value=0.25>Impossible</option>
-                 </select>
-              </div>
-              </div>
-            {{/each}}
-          </div>
-        </div>
-        {{!-- Biography Tab --}}
-        <div class="tab health" data-group="primary" data-tab="health">
-            <table class="health-table">
-                <tr>
-                    <th width=20%>Current</th>
-                    <th>Scratch</th>
-                    <th>Slight</th>
-                    <th>Serious</th>
-                    <th>Critical</th>
-                </tr>
-                {{#each data.health as |part key|}}
-                <tr>
-                    <td>
-                        <div>{{@key}}</div>
-                        <input type="number" name="data.health.{{key}}.value" value="{{part.value}}" data-dtype="Boolean" min="0" max="99" step="1"/>
-                    </td>
-                    <td>
-                        <input type="checkbox" name="data.health.{{key}}.scratch" value="{{part.scratch}}" data-dtype="Boolean" {{#if this.scratch}}checked{{/if}}/>
-                        <div class="part-th_scratch" title="Modifier">{{this.th_scratch}}</div>
-                    </td>
-                    <td>
-                        <input type="checkbox" name="data.health.{{key}}.slight" value="{{part.slight}}" data-dtype="Boolean" {{#if this.slight}}checked{{/if}}/>
-                        <div class="part-th_slight" title="Modifier">{{this.th_slight}}</div>
-                    </td>
-                    <td>
-                        <input type="checkbox" name="data.health.{{key}}.serious" value="{{part.serious}}" data-dtype="Boolean" {{#if this.serious}}checked{{/if}}/>
-                        <div class="part-th_serious" title="Modifier">{{this.th_serious}}</div>
-                    </td>
-                    <td>
-                        <input type="checkbox" name="data.health.{{key}}.critical" value="{{part.critical}}" data-dtype="Boolean" {{#if this.critical}}checked{{/if}}/>
-                        <div class="part-th_critical" title="Modifier">{{this.th_critical}}</div>
-                    </td>
-
-                </tr>
+                
                 {{/each}}
-            </table>
+            </div>
+        
+            {{editor content=data.biography target="data.biography" button=true owner=owner editable=editable}}
         </div>
+        
+        {{!-- Health Tab --}}
+        <div class="tab health" data-group="primary" data-tab="health">
+        <table>
+            <tr>
+                <th>part</th>
+                <th>scratch</th>
+                <th>slight</th>
+                <th>serious</th>
+                <th>critical</th>
+            </tr>
+            {{#each data.health.parts as |part key|}}
+            <tr>
+                <td>
+                    <div class="flexcol">
+                        <label for="data.health.parts.{{key}}.value">{{key}}</label>
+                        <input type="number" name="data.health.parts.{{key}}.value" value="{{part.value}}" data-dtype="Number"/>
+                    </div>
+                </td>
+                <td>
+                    <div class="flexcol">
+                        <input type="checkbox" name="data.health.parts.{{key}}.check1" {{checked part.check1}}/>
+                        <label>{{part.thr_1}}</label>
+                    </div>
+                </td>
+                <td>
+                    <div class="flexcol">
+                        <input type="checkbox" name="data.health.parts.{{key}}.check2" {{checked part.check2}}/>
+                        <label>{{part.thr_2}}</label>
+                    </div>
+                </td>
+                <td>
+                    <div class="flexcol">
+                        <input type="checkbox" name="data.health.parts.{{key}}.check3" {{checked part.check3}}/>
+                        <label>{{part.thr_3}}</label>
+                    </div>
+                </td>
+                <td>
+                    <div class="flexcol">
+                        <input type="checkbox" name="data.health.parts.{{key}}.check4" {{checked part.check4}}/>
+                        <label>{{part.thr_4}}</label>
+                    </div>
+                </td>
+
+
+            </tr>
+            {{/each}}
+        </table>
+        </div>
+
         {{!-- Owned Items Tab --}}
         <div class="tab items" data-group="primary" data-tab="items">
             <ol class="items-list">
@@ -128,7 +99,6 @@
                   <div class="item-controls">
                     <a class="item-control item-create" title="Create item" data-type="item"><i class="fas fa-plus"></i> Add item</a>
                   </div>
-                  
                 </li>
             {{#each actor.items as |item id|}}
                 <li class="item flexrow" data-item-id="{{item._id}}">

@@ -11,7 +11,7 @@ small_arms_rifle,str
 thrown_weapon,str
 unarmed_martial_arts,str
 climbing,con
-combat engineer,con
+combat_engineer,con
 parachute,con
 riding,con
 scuba,con

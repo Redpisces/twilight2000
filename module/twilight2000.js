@@ -1,13 +1,14 @@
 // Import Modules
-import { TwilightTwoThousandActor } from "./actor/actor.js";
-import { TwilightTwoThousandActorSheet } from "./actor/actor-sheet.js";
-import { TwilightTwoThousandItem } from "./item/item.js";
-import { TwilightTwoThousandItemSheet } from "./item/item-sheet.js";
+import { TwilightTKActor } from "./actor/actor.js";
+import { TwilightTKActorSheet } from "./actor/actor-sheet.js";
+import { TwilightTKItem } from "./item/item.js";
+import { TwilightTKItemSheet } from "./item/item-sheet.js";
+
 Hooks.once('init', async function() {
 
   game.twilight2000 = {
-    TwilightTwoThousandActor,
-    TwilightTwoThousandItem
+    TwilightTKActor,
+    TwilightTKItem
   };
 
   /**
@@ -19,16 +20,15 @@ Hooks.once('init', async function() {
     decimals: 2
   };
 
-  
   // Define custom Entity classes
-  CONFIG.Actor.entityClass = TwilightTwoThousandActor;
-  CONFIG.Item.entityClass = TwilightTwoThousandItem;
+  CONFIG.Actor.entityClass = TwilightTKActor;
+  CONFIG.Item.entityClass = TwilightTKItem;
 
   // Register sheet application classes
   Actors.unregisterSheet("core", ActorSheet);
-  Actors.registerSheet("twilight2000", TwilightTwoThousandActorSheet, { makeDefault: true });
+  Actors.registerSheet("twilight2000", TwilightTKActorSheet, { makeDefault: true });
   Items.unregisterSheet("core", ItemSheet);
-  Items.registerSheet("twilight2000", TwilightTwoThousandItemSheet, { makeDefault: true });
+  Items.registerSheet("twilight2000", TwilightTKItemSheet, { makeDefault: true });
 
   // If you need to add Handlebars helpers, here are a few useful examples:
   Handlebars.registerHelper('concat', function() {
@@ -45,7 +45,7 @@ Hooks.once('init', async function() {
     return str.toLowerCase();
   });
   
-  Handlebars.registerHelper('ifEquals',function(arg1,arg2,options){
-      return (arg1 == arg2) ? options.fn(this) : options.inverse(this);
+  Handlebars.registerHelper('checked',function (currentValue){
+      return currentValue == true ? 'checked':'';
   });
 });

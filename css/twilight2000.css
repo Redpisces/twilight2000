@@ -115,19 +115,14 @@
 }
 
 /* Styles limited to twilight2000 sheets */
-.twilight2000 {
-  /* Chrome, Safari, Edge, Opera */
-  /* Firefox */
-}
-
 .twilight2000 .item-form {
   font-family: "Roboto", sans-serif;
 }
 
 .twilight2000 .sheet-header {
   -webkit-box-flex: 0;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
+  -ms-flex: 0 0 110px;
+  flex: 0 0 110px;
   overflow: hidden;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -189,20 +184,6 @@
 
 .twilight2000 .tox .tox-edit-area {
   padding: 0 8px;
-}
-
-.twilight2000 input::-webkit-outer-spin-button,
-.twilight2000 input::-webkit-inner-spin-button {
-  -webkit-appearance: auto;
-  margin: 0;
-}
-
-.twilight2000 input[type=number] {
-  -moz-appearance: auto;
-}
-
-.twilight2000 .health-table table, .twilight2000 .health-table td, .twilight2000 .health-table th {
-  text-align: center;
 }
 
 .twilight2000 .resource-label {

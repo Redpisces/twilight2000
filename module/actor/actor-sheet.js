@@ -2,7 +2,7 @@
  * Extend the basic ActorSheet with some very simple modifications
  * @extends {ActorSheet}
  */
-export class TwilightTwoThousandActorSheet extends ActorSheet {
+export class TwilightTKActorSheet extends ActorSheet {
 
   /** @override */
   static get defaultOptions() {
@@ -22,9 +22,7 @@ export class TwilightTwoThousandActorSheet extends ActorSheet {
     const data = super.getData();
     data.dtypes = ["String", "Number", "Boolean"];
     for (let attr of Object.values(data.data.attributes)) {
-        if (attr.nodeName==='INPUT'){
-            attr.isCheckbox = attr.dtype === "Boolean";
-        }
+      attr.isCheckbox = attr.dtype === "Boolean";
     }
     return data;
   }
@@ -96,43 +94,7 @@ export class TwilightTwoThousandActorSheet extends ActorSheet {
     const element = event.currentTarget;
     const dataset = element.dataset;
 
-    if (dataset.type === "skillroll"){
-        let  ability=this.actor.data.data.abilities[element.parentElement.querySelector('.ability_selector').value].value;
-        let diff= element.parentElement.querySelector('.difficulty_selector').value
-        let skill = this.actor.data.data.skills[dataset.label].value;
-        let roll = new Roll('d20', this.actor.data.data).evaluate();
-        let label = dataset.label ? `Skill Roll: ${this.actor.data.data.skills[dataset.label].print}` : '';
-        let asset = (ability+skill)*diff;
-        let result=roll.result;
-        var dos;
-        if (result<=asset-10){
-            dos="Outstanding Success";
-        } else if (result <= asset) {
-            dos="Success";
-        } else if (result > asset+10){
-            dos="Catostrophic Failure";
-        } else {
-            dos="Failure";
-        }
-        
-        let content=`<div>Asset: (${ability}+${skill})*${diff} = ${asset}</div>`+
-            `<div>Rolled: ${result}</div>`+
-            `<div>Result: ${dos}</div>`
-        ;
-        
-        let messageData={
-            speaker: ChatMessage.getSpeaker({ actor: this.actor }),
-            flavor: label,
-            user: game.user._id,
-            //type: CONST.CHAT_MESSAGE_TYPES.ROLL,
-            content: content,
-            sound: CONFIG.sounds.dice,
-            skill: "ASDF",
-        };
-        //messageData.roll=roll.evaluate();
-        ChatMessage.create(messageData);
-    }
-    else if (dataset.roll) {
+    if (dataset.roll) {
       let roll = new Roll(dataset.roll, this.actor.data.data);
       let label = dataset.label ? `Rolling ${dataset.label}` : '';
       roll.roll().toMessage({

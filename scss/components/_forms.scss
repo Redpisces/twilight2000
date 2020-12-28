@@ -3,7 +3,7 @@
 }
 
 .sheet-header {
-  flex: 0 0 auto;
+  flex: 0 0 110px;
   overflow: hidden;
   display: flex;
   flex-direction: row;
@@ -52,20 +52,4 @@
   .tox-edit-area {
     padding: 0 8px;
   }
-}
-/* Chrome, Safari, Edge, Opera */
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: auto;
-  margin: 0;
-}
-
-/* Firefox */
-input[type=number] {
-  -moz-appearance: auto;
-}
-.health-table{
-    table,td,th{
-        text-align: center;
-    }
 }
