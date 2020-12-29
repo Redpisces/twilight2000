@@ -32,19 +32,21 @@ export class TwilightTKActor extends Actor {
       // Calculate the modifier using d20 rules.
       ability.mod = Math.floor((ability.value - 10) / 2);
     }*/
-    for (let [key,part] of Object.entries(data.health.parts)){
-        
-        if (key === "head"){
-            part.hit_capacity=data.attributes.con.value*2;
-        } else if (key === "chest"){
-            part.hit_capacity=(data.attributes.str.value+data.attributes.con.value)*3;
-        } else {
-            part.hit_capacity=(data.attributes.str.value+data.attributes.con.value)*2;
-        }
-        part.thr_1=`1-${Math.floor(part.hit_capacity/2)}`;
-        part.thr_2=`${Math.floor(part.hit_capacity/2)+1}-${part.hit_capacity}`;
-        part.thr_3=`${part.hit_capacity+1}-${part.hit_capacity*2}`;
-        part.thr_4=`${part.hit_capacity*2+1}+`;
+    if (data.health){
+      for (let [key,part] of Object.entries(data.health.parts)){
+          
+          if (key === "head"){
+              part.hit_capacity=data.attributes.con.value*2;
+          } else if (key === "chest"){
+              part.hit_capacity=(data.attributes.str.value+data.attributes.con.value)*3;
+          } else {
+              part.hit_capacity=(data.attributes.str.value+data.attributes.con.value)*2;
+          }
+          part.thr_1=`1-${Math.floor(part.hit_capacity/2)}`;
+          part.thr_2=`${Math.floor(part.hit_capacity/2)+1}-${part.hit_capacity}`;
+          part.thr_3=`${part.hit_capacity+1}-${part.hit_capacity*2}`;
+          part.thr_4=`${part.hit_capacity*2+1}+`;
+      }
     }
   }
 

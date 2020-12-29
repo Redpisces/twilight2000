@@ -16,7 +16,7 @@ for key,value in groups.items():
     s+="\n\t\t\"skills\":{"
     for v in value:
         s+="\n\t\t\t\""+v+"\":null,"
-    s=s[:-1]+"\n\t\t}"
+    s=s[:-1]+"\n\t\t},\"skill_groups\"=null"
     s+="\n\t},"
 s=s[:-1]
 s=''.join(s.split())#uncomment for minify

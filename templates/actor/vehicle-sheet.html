@@ -1,0 +1,66 @@
+<form class="{{cssClass}}" autocomplete="off">
+    <header class="sheet-header">
+        <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="100" width="100"/>
+        <div class="header-fields">
+             <h1 class="charname"><input name="name" type="text" value="{{actor.name}}" placeholder="Name"/></h1>
+            
+
+        </div>
+    </header>
+
+    {{!-- Sheet Tab Navigation --}}
+    <nav class="sheet-tabs tabs" data-group="primary">
+        <a class="item" data-tab="attributes">Attributes</a>
+        <a class="item" data-tab="description">Description</a>
+    </nav>
+
+    {{!-- Sheet Body --}}
+    <section class="sheet-body">
+        {{!-- Attributes Tab --}}
+        <div class="tab attributes" data-group="primary" data-tab="attributes">
+          <h2>Travel</h2>
+          <table>
+              <tr>
+              {{#each data.travel_stats as |attribute key|}}
+              <th>{{key}}</th>
+              {{/each}}
+              </tr>
+              <tr>
+              {{#each data.travel_stats as |attribute key|}}
+              <td><input name="data.travel_stats.{{key}}" type="text" value="{{attribute}}"/></td>
+              {{/each}}
+              </tr>
+          </table>
+          <h2>Combat</h2>
+          <table>
+              <tr>
+              {{#each data.combat_stats as |detail key|}}
+              <th>{{key}}</th>
+              {{/each}}
+              </tr>
+              <tr>
+              {{#each data.combat_stats as |detail key|}}
+              <td><input name="data.combat_stats.{{key}}" type="text" value="{{detail}}"/></td>
+              {{/each}}
+              </tr>
+          </table>
+          <h2>Details</h2>
+          <table>
+              <tr>
+              {{#each data.details as |detail key|}}
+              <th>{{key}}</th>
+              {{/each}}
+              </tr>
+              <tr>
+              {{#each data.details as |detail key|}}
+              <td><input name="data.details.{{key}}" type="text" value="{{detail}}"/></td>
+              {{/each}}
+              </tr>
+          </table>
+        </div>
+        {{!-- Description Tab --}}
+        <div class="tab" data-group="primary" data-tab="description">
+            {{editor content=data.description target="data.description" button=true owner=owner editable=editable}}
+        </div>
+    </section>
+</form>

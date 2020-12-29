@@ -8,7 +8,7 @@ export class TwilightTKActorSheet extends ActorSheet {
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
       classes: ["twilight2000", "sheet", "actor"],
-      template: "systems/twilight2000/templates/actor/actor-sheet.html",
+      //template: "systems/twilight2000/templates/actor/actor-sheet.html",
       width: 600,
       height: 600,
       tabs: [{ navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "description" }]
@@ -18,11 +18,18 @@ export class TwilightTKActorSheet extends ActorSheet {
   /* -------------------------------------------- */
 
   /** @override */
+  get template(){
+   const path = "systems/twilight2000/templates/actor";
+   return `${path}/${this.actor.data.type}-sheet.html`;
+  }
+  /** @override */
   getData() {
     const data = super.getData();
     data.dtypes = ["String", "Number", "Boolean"];
-    for (let attr of Object.values(data.data.attributes)) {
-      attr.isCheckbox = attr.dtype === "Boolean";
+    if (data.data.attributes){
+      for (let attr of Object.values(data.data.attributes)) {
+        attr.isCheckbox = attr.dtype === "Boolean";
+      }
     }
     return data;
   }
@@ -53,6 +60,8 @@ export class TwilightTKActorSheet extends ActorSheet {
 
     // Rollable abilities.
     html.find('.rollable').click(this._onRoll.bind(this));
+    
+    html.find('.addskill').click(this._addSkill.bind(this));
   }
 
   /* -------------------------------------------- */
@@ -83,24 +92,53 @@ export class TwilightTKActorSheet extends ActorSheet {
     // Finally, create the item!
     return this.actor.createOwnedItem(itemData);
   }
+  _addSkill(event){
+    event.preventDefault();
+    const element = event.currentTarget;
+    const dataset = element.dataset;
+    
+    if (dataset.group){
+      let group=this.actor.data.data.attributes[dataset.group];
+      let randomid='_' + Math.random().toString(36).substr(2, 9);
+
+      //this.actor.data.data.attributes[dataset.group].custom_skills.set("ASDF",0);
+      this.actor.update({['data.attributes.'+dataset.group+'.custom_skills.'+randomid+'.name']:null});
+      this.actor.update({['data.attributes.'+dataset.group+'.custom_skills.'+randomid+'.value']:null})
+
+    }
+    
+    
+  }
 
   /**
    * Handle clickable rolls.
    * @param {Event} event   The originating click event
    * @private
    */
-  _onRoll(event) {
+  async _onRoll(event) {
     event.preventDefault();
     const element = event.currentTarget;
     const dataset = element.dataset;
 
-    if (dataset.roll) {
+    /*if (dataset.roll) {
       let roll = new Roll(dataset.roll, this.actor.data.data);
       let label = dataset.label ? `Rolling ${dataset.label}` : '';
       roll.roll().toMessage({
+        template: "systems/twilight2000/templates/chat/skill-roll.html",
         speaker: ChatMessage.getSpeaker({ actor: this.actor }),
         flavor: label
       });
+    }*/
+    if (dataset.type==="custom_skill"){
+      
+      let data={
+        actor:this.actor,
+        skill:{name:dataset.skill_name,value:dataset.skill_value},
+        attribute:{name:dataset.attribute_name,value:dataset.attribute_value}
+      }
+      var content= await renderTemplate("systems/twilight2000/templates/chat/skill-roll.html",data);
+      
+      ChatMessage.create({content:content});
     }
   }
 
