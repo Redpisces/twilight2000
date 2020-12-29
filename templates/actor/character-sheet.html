@@ -35,11 +35,11 @@
                         {{#each custom_skills as |skill skey|}}
                         <tr>
                             <td>
-                                <input name="data.attributes.{{akey}}.custom_skills.{{skey}}.name" type="text" value="{{skill.name}}" placeholder="new skill"/>
+                              <input name="data.attributes.{{akey}}.custom_skills.{{skey}}.name" type="text" value="{{skill.name}}" placeholder="new skill"/>
                             </td>
                             <td>
                               <input type="number" name="data.attributes.{{akey}}.custom_skills.{{skey}}.value" value="{{skill.value}}" placeholder="untrained" data-dtype="Number"/>
-                              <img class="skill rollable" data-type="custom_skill" data-skill_name="{{skill.name}}" data-skill_value="{{skill.value}}" data-attribute_name="{{akey}}" attribute_value="{{group.value}}" src="icons/svg/d20-black.svg" height="24px" width="24px"/>
+                              <img class="skill rollable" data-type="custom_skill" data-skill_name="{{skill.name}}" data-skill_value="{{skill.value}}" data-attribute_name="{{akey}}" data-attribute_value="{{group.value}}" src="icons/svg/d20-black.svg" height="24px" width="24px"/>
                             </td>
                         </tr>
                         {{/each}}

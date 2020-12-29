@@ -130,12 +130,32 @@ export class TwilightTKActorSheet extends ActorSheet {
       });
     }*/
     if (dataset.type==="custom_skill"){
-      
+      let roll= new Roll("1d20");
+      roll = await roll.evaluate();
+      const skill={name:dataset.skill_name,value:parseInt(dataset.skill_value)};
+      const attribute={name:dataset.attribute_name,value:parseInt(dataset.attribute_value)};
+      let asset=-1;
+      if (dataset.max_asset){
+        asset=Math.min(skill.value+attribute.value,dataset.max_asset);
+      } else {
+        asset=Math.min(skill.value+attribute.value,19);
+      }
       let data={
         actor:this.actor,
-        skill:{name:dataset.skill_name,value:dataset.skill_value},
-        attribute:{name:dataset.attribute_name,value:dataset.attribute_value}
+        skill:skill,
+        attribute:attribute,
+        difficulty:{value:1},
+        target:(asset)*1,
+        roll:roll.result
       }
+      if (roll.result <= data.target-10) {data.result="Outstanding Success";}
+      else if (roll.result == 1) {data.result="Success";}
+      else if (roll.result > data.target+10) {data.result="Catastrophic Failure";}
+      else if (roll.result <= data.target) {data.result="Success";}
+      else if (roll.result > data.target) {data.result="Failure";}
+      else {data.result="ERROR"};
+      
+      
       var content= await renderTemplate("systems/twilight2000/templates/chat/skill-roll.html",data);
       
       ChatMessage.create({content:content});

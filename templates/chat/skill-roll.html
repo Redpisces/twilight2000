@@ -3,13 +3,19 @@
   <header class="card-header flexrow">
     <div class="flexcol">
       <span>{{actor.name}}</span>
-      <span>Skill Roll: {{skill.name}}</span>
+      <span>Skill Roll: {{skill.name}}+{{attribute.name}}</span>
     </div>
   </header>
   <hr/>
   <div class="card-content">
     <div class="flexrow">
-      <span>Asset:</span> <span>({{attribute.value}}+{{skill.value}})</span>
+      <span>Asset:</span> <span>({{attribute.value}}+{{skill.value}})x{{difficulty.value}}={{target}}</span>
+    </div>
+    <div class="flexrow">
+      <span>Rolled:</span> <span>{{roll}}</span>
+    </div>
+    <div class="flexrow">
+      <span>Result:</span> <span>{{result}}</span>
     </div>
   
   </div>
