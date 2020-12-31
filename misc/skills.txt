@@ -47,11 +47,6 @@ meteorology,edu
 disguise,cha
 instruction,cha
 interrogation,cha
-language1,cha
-language2,cha
-language3,cha
-language4,cha
-language5,cha
 leadership,cha
 persuasion,cha
 farming,int

@@ -186,6 +186,14 @@
   padding: 0 8px;
 }
 
+.twilight2000 .skill_value_column {
+  width: 32px;
+}
+
+.twilight2000 .deleteskill {
+  background-color: coral;
+}
+
 .twilight2000 .resource-label {
   font-weight: bold;
   text-transform: uppercase;

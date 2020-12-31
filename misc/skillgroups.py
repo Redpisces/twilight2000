@@ -11,13 +11,16 @@ for l in lines:
     groups[x[1]].append(x[0])
 s="\"attributes\":{"
 for key,value in groups.items():
-    s+="\n\t\""+key+"\":{"
-    s+="\n\t\t\"value\":0,"
-    s+="\n\t\t\"skills\":{"
+    s+="\""+key+"\":{"
+    s+="\"value\":0,"
+    s+="\"skills\":{"
     for v in value:
-        s+="\n\t\t\t\""+v+"\":null,"
-    s=s[:-1]+"\n\t\t},\"skill_groups\"=null"
-    s+="\n\t},"
-s=s[:-1]
-s=''.join(s.split())#uncomment for minify
+        s+="\""+v+"\":{"
+        s+="\"name\":\""+v.replace("_"," ").title()+"\","
+        s+="\"value\":null"
+        s+="},"
+    s=s[:-1]+"}"
+    s+="},"
+s=s[:-1]+"},"
+
 print (s)

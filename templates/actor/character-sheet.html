@@ -8,7 +8,8 @@
 
     {{!-- Sheet Tab Navigation --}}
     <nav class="sheet-tabs tabs" data-group="primary">
-        <a class="item" data-tab="skills">Description</a>
+        <a class="item" data-tab="description">Description</a>
+        <a class="item" data-tab="skills">Skills</a>
         <a class="item" data-tab="health">Health</a>
         <a class="item" data-tab="items">Items</a>
     </nav>
@@ -16,8 +17,28 @@
     {{!-- Sheet Body --}}
     <section class="sheet-body">
 
+        {{!-- Description Tab --}}
+        <div class="tab health" data-group="primary" data-tab="description">
+       <h2>Description</h2>
+       {{#each . as |idk key|}}
+       <table>
+       <tr>{{key}}:{{idk}}</div>
+       <tr><table>
+        {{#each . as |layer2 key2|}}
+        <tr>
+        <td> {{key2}}</td><td>{{layer2}}</td>
+        </tr>
+        {{/each}}
+        </table></tr>
+       {{/each}}
+       </table>
+       {{editor content=data.biography target="data.biography" button=true owner=owner editable=editable}}
+        
+        </div>
+        
         {{!-- Skills Tab --}}
         <div class="tab skill-list" data-group="primary" data-tab="skills">
+            
             <div class="skills grid grid-3col">
                 {{#each data.attributes as |group akey|}}
                 <div>
@@ -28,29 +49,29 @@
                     <table table-layout="fixed">
                         {{#each skills as |skill skey|}}
                         <tr>
-                            <td><label for="data.attributes.{{akey}}.skills.{{skey}}">{{skey}} </label></td>
-                            <td><input type="number" name="data.attributes.{{akey}}.skills.{{skey}}" value="{{skill}}" data-dtype="Number" placeholder="untrained"/></td>
-                        </tr>
-                        {{/each}}
-                        {{#each custom_skills as |skill skey|}}
-                        <tr>
-                            <td>
-                              <input name="data.attributes.{{akey}}.custom_skills.{{skey}}.name" type="text" value="{{skill.name}}" placeholder="new skill"/>
-                            </td>
-                            <td>
-                              <input type="number" name="data.attributes.{{akey}}.custom_skills.{{skey}}.value" value="{{skill.value}}" placeholder="untrained" data-dtype="Number"/>
-                              <img class="skill rollable" data-type="custom_skill" data-skill_name="{{skill.name}}" data-skill_value="{{skill.value}}" data-attribute_name="{{akey}}" data-attribute_value="{{group.value}}" src="icons/svg/d20-black.svg" height="24px" width="24px"/>
-                            </td>
+                            <td class="skill_name_column">
+                                {{#if ../../options.editmode}}
+                                <input name="data.attributes.{{akey}}.skills.{{skey}}.name" type="text" value="{{skill.name}}" placeholder="new skill"/></td>
+                                <td class="skill_value_column"><a><img class="deleteskill" data-group="{{akey}}" data-skill_id="{{skey}}" src="icons/svg/bones.svg"  height="24px" width="24px"/></a></td>
+                                {{else}}
+                                <label for="data.attributes.{{akey}}.skills.{{skey}}.name" class="resource-label skill rollable" data-type="custom_skill" data-skill_name="{{skill.name}}" data-skill_value="{{skill.value}}" data-attribute_name="{{akey}}" data-attribute_value="{{group.value}}">{{skill.name}}</label>
+                                <td class="skill_value_column"><input type="number" name="data.attributes.{{akey}}.skills.{{skey}}.value" value="{{skill.value}}" data-dtype="Number" placeholder="untrained"/></td>
+                                {{/if}}
+                            
+                            
                         </tr>
                         {{/each}}
                     </table>
-                    <span class="ability-mod addskill" data-group="{{akey}}">New {{akey}} skill</span>
+                    {{#if ../options.editmode}}
+                    <button class="ability-mod addskill" data-group="{{akey}}">New {{akey}} skill</button>
+                    {{/if}}
                 </div>
                 
                 {{/each}}
+                
             </div>
-        
-            {{editor content=data.biography target="data.biography" button=true owner=owner editable=editable}}
+            <button type="submit" class="toggleeditmode">TOGGLE EDIT MODE</button>
+            
         </div>
         
         {{!-- Health Tab --}}
