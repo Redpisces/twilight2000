@@ -378,6 +378,7 @@ async function _skillroll(actorId,dataset={}){
   } else {
     target=Math.min(Math.max((skill.value+attribute.value)*dataset.difficulty.value,1),19);
   }
+  console.log(skill.value+" "+attribute.value+" "+dataset.difficulty.value);
   
   let data={
     actor: game.actors.get(actorId),
