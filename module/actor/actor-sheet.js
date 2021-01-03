@@ -326,7 +326,7 @@ async function _attackFireRoll(actorId,dataset={}){
   let actor=game.actors.get(actorId);
   let gun=actor.data.data.missile_weapons[dataset.weapon];
   let target=gun.asset*dataset.difficulty.value;
-  let damageRoll=new Roll(gun.damage+"d6");
+  let damageRoll=(gun.damage>=0) ? new Roll(gun.damage+"d6") : new Roll("1d6-1");
   target= Math.min(Math.max(target,1),17);
   console.log(target);
   await roll.evaluate();
