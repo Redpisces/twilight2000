@@ -160,10 +160,13 @@ export class TwilightTKActorSheet extends ActorSheet {
         flavor: label
       });
     }*/
+    
+    
+    
     if (dataset.type==="custom_skill"){
       let d = new Dialog({
-        title:"test dialog",
-        content:"<p>Choose option 1 or 2</p>",
+        title:"Skill Check",
+        content:"<p>Choose Difficulty</p>",
         buttons:{
           easy:{
             icon:'<i class= :fas fa-check"></i>',
@@ -198,9 +201,163 @@ export class TwilightTKActorSheet extends ActorSheet {
        d.render(true);
 
     }
+    
+    else if (dataset.type==="attack-fire"){
+      let d = new Dialog({
+        title:"Attack check",
+        content:"<p>Choose Difficulty</p>",
+        buttons:{
+          easy:{
+            icon:'<i class= :fas fa-check"></i>',
+            label:"Easy",
+            callback: ()=> _attackFireRoll(this.actor.id,Object.assign({},dataset,{difficulty:{name:"Easy", value:4}}))
+          },
+          average:{
+            icon:'<i class= :fas fa-check"></i>',
+            label:"Average",
+            callback: ()=> _attackFireRoll(this.actor.id,Object.assign({},dataset,{difficulty:{name:"Average", value:2}}))
+          },
+          difficult:{
+            icon:'<i class= :fas fa-check"></i>',
+            label:"Difficult",
+            callback: ()=> _attackFireRoll(this.actor.id,Object.assign({},dataset,{difficulty:{name:"Difficult", value:1}}))
+          },
+          formidable:{
+            icon:'<i class= :fas fa-check"></i>',
+            label:"Formidable",
+            callback: ()=> _attackFireRoll(this.actor.id,Object.assign({},dataset,{difficulty:{name:"Formidable", value:0.5}}))
+          },
+          impossible:{
+            icon:'<i class= :fas fa-check"></i>',
+            label:"Impossible",
+            callback: ()=> _attackFireRoll(this.actor.id,Object.assign({},dataset,{difficulty:{name:"Impossible", value:0.25}}))
+          }
+        },
+        default:"difficult"
+        //render: html => console.log("Register interactivity in the rendered dialog"),
+        //close: html => console.log("This always is logged no matter which option is chosen")
+       });
+       d.render(true);
+
+    }
+    
+    else if (dataset.type==="attack-melee"){
+      let d = new Dialog({
+        title:"Attack check",
+        content:"<p>Choose Difficulty</p>",
+        buttons:{
+          easy:{
+            icon:'<i class= :fas fa-check"></i>',
+            label:"Easy",
+            callback: ()=> _attackMeleeRoll(this.actor.id,Object.assign({},dataset,{difficulty:{name:"Easy", value:4}}))
+          },
+          average:{
+            icon:'<i class= :fas fa-check"></i>',
+            label:"Average",
+            callback: ()=> _attackMeleeRoll(this.actor.id,Object.assign({},dataset,{difficulty:{name:"Average", value:2}}))
+          },
+          difficult:{
+            icon:'<i class= :fas fa-check"></i>',
+            label:"Difficult",
+            callback: ()=> _attackMeleeRoll(this.actor.id,Object.assign({},dataset,{difficulty:{name:"Difficult", value:1}}))
+          },
+          formidable:{
+            icon:'<i class= :fas fa-check"></i>',
+            label:"Formidable",
+            callback: ()=> _attackMeleeRoll(this.actor.id,Object.assign({},dataset,{difficulty:{name:"Formidable", value:0.5}}))
+          },
+          impossible:{
+            icon:'<i class= :fas fa-check"></i>',
+            label:"Impossible",
+            callback: ()=> _attackMeleeRoll(this.actor.id,Object.assign({},dataset,{difficulty:{name:"Impossible", value:0.25}}))
+          }
+        },
+        default:"difficult"
+        //render: html => console.log("Register interactivity in the rendered dialog"),
+        //close: html => console.log("This always is logged no matter which option is chosen")
+       });
+       d.render(true);
+
+    }
   }
 
 }
+
+async function _attackMeleeRoll(actorId,dataset={}){
+  let roll= new Roll("1d20");
+  
+  let actor=game.actors.get(actorId);
+  let gun=actor.data.data.melee_weapons[dataset.weapon];
+  let target=gun.asset*dataset.difficulty.value;
+  let damageRoll=new Roll(gun.damage);
+  target= Math.min(Math.max(target,1),19);
+  await roll.evaluate();
+  
+  let data={
+    actor: game.actors.get(actorId),
+    gun:gun,
+    difficulty:dataset.difficulty,
+    target:target,
+    roll:roll.total,
+    location:new Roll("1d6").evaluate().result
+  }
+  await damageRoll.evaluate();
+  
+  
+  data.details=damageRoll.terms[0].results;
+  data.formula=damageRoll.formula;
+  if (roll.result <= target-10) {data.result=damageRoll.total*2+" damage";}
+  else if (roll.total == 1) {data.result=damageRoll.total+" damage";}
+  else if (roll.total > target+10) {data.result="Catastrophic Failure";}
+  else if (roll.total <= target) {data.result=damageRoll.total+" damage";}
+  else if (roll.total > target) {data.result="Miss";}
+  else {data.result="ERROR"};
+  
+  
+  var content= await renderTemplate("systems/twilight2000/templates/chat/attack-fire-roll.html",data);
+  
+  ChatMessage.create({content:content});
+  
+}
+
+async function _attackFireRoll(actorId,dataset={}){
+  let roll= new Roll("1d20");
+  
+  let actor=game.actors.get(actorId);
+  let gun=actor.data.data.missile_weapons[dataset.weapon];
+  let target=gun.asset*dataset.difficulty.value;
+  let damageRoll=new Roll(gun.damage+"d6");
+  target= Math.min(Math.max(target,1),17);
+  console.log(target);
+  await roll.evaluate();
+  
+  let data={
+    actor: game.actors.get(actorId),
+    gun:gun,
+    difficulty:dataset.difficulty,
+    target:target,
+    roll:roll.total,
+    location:new Roll("1d6").evaluate().result
+  }
+  await damageRoll.evaluate();
+  let pen = (gun.pen) ? gun.pen : "nil";
+  
+  data.details=damageRoll.terms[0].results;
+  data.formula=damageRoll.formula;
+  if (roll.total <= target-10) {data.result=damageRoll.total*2+" damage "+"(pen:"+pen+")";}
+  else if (roll.total == 1) {data.result=damageRoll.total+" damage "+"("+"(pen:"+pen+")";}
+  else if (roll.total > target+10) {data.result="Catastrophic Failure";}
+  else if (roll.total <= target) {data.result=damageRoll.total+" damage "+"(pen:"+pen+")";}
+  else if (roll.total > target) {data.result="Miss";}
+  else {data.result="ERROR"};
+  
+  
+  var content= await renderTemplate("systems/twilight2000/templates/chat/attack-fire-roll.html",data);
+  
+  ChatMessage.create({content:content});
+  
+}
+
 async function _skillroll(actorId,dataset={}){
   let roll= new Roll("1d20");
   roll = await roll.evaluate();

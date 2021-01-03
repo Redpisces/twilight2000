@@ -2,8 +2,8 @@
 
     {{!-- Sheet Header --}}
     <header class="sheet-header">
-        <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="100" width="100"/>
-        <h1 class="charname"><input name="name" type="text" value="{{actor.name}}" placeholder="Name"/></h1>
+        <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="100" width="100" />
+        <h1 class="charname"><input name="name" type="text" value="{{actor.name}}" placeholder="Name" /></h1>
     </header>
 
     {{!-- Sheet Tab Navigation --}}
@@ -11,7 +11,7 @@
         <a class="item" data-tab="description">Description</a>
         <a class="item" data-tab="skills">Skills</a>
         <a class="item" data-tab="health">Health</a>
-        <a class="item" data-tab="items">Items</a>
+        <a class="item" data-tab="combat">Combat</a>
     </nav>
 
     {{!-- Sheet Body --}}
@@ -19,46 +19,166 @@
 
         {{!-- Description Tab --}}
         <div class="tab health" data-group="primary" data-tab="description">
-       <h2>Description</h2>
-       {{#each . as |idk key|}}
-       <table>
-       <tr>{{key}}:{{idk}}</div>
-       <tr><table>
-        {{#each . as |layer2 key2|}}
-        <tr>
-        <td> {{key2}}</td><td>{{layer2}}</td>
-        </tr>
-        {{/each}}
-        </table></tr>
-       {{/each}}
-       </table>
-       {{editor content=data.biography target="data.biography" button=true owner=owner editable=editable}}
-        
+            <h2>Description</h2>
+            <div class="grid grid-3col">
+                <table>
+                    <tr>
+                        <td>
+                            <label for="data.bio.player" class="resource-label">Player:</label>
+                        </td>
+                        <td>
+                            <input type="text" name="data.bio.player" value="{{data.bio.player}}" data-dtype="text" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="data.bio.nationality" class="resource-label">Nationality:</label>
+                        </td>
+                        <td>
+                            <input type="text" name="data.bio.nationality" value="{{data.bio.nationality}}" data-dtype="text" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="data.bio.gender" class="resource-label">Gender:</label>
+                        </td>
+                        <td>
+                            <input type="text" name="data.bio.gender" value="{{data.bio.gender}}" data-dtype="text" />
+                        </td>
+                    </tr>
+                </table>
+                <table>
+                    <tr>
+                        <td>
+                            <label for="data.bio.age" class="resource-label">Age:</label>
+                        </td>
+                        <td>
+                            <input type="text" name="data.bio.age" value="{{data.bio.age}}" data-dtype="text" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="data.bio.branch" class="resource-label">Branch:</label>
+                        </td>
+                        <td>
+                            <input type="text" name="data.bio.branch" value="{{data.bio.branch}}" data-dtype="text" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="data.bio.weight" class="resource-label">Weight:</label>
+                        </td>
+                        <td>
+                            <input type="text" name="data.bio.weight" value="{{data.bio.weight}}" data-dtype="text" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="data.bio.throw_range" class="resource-label">Throw Range:</label>
+                        </td>
+                        <td>
+                            <input type="text" name="data.bio.throw_range" value="{{data.bio.throw_range}}" data-dtype="text" />
+                        </td>
+                    </tr>
+                </table>
+                <table>
+                    <tr>
+                        <td>
+                            <label for="data.bio.initiative" class="resource-label">Initiative:</label>
+                        </td>
+                        <td>
+                            <input type="text" name="data.bio.initiative" value="{{data.bio.initiative}}" data-dtype="text" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="data.bio.rank" class="resource-label">Rank:</label>
+                        </td>
+                        <td>
+                            <input type="text" name="data.bio.rank" value="{{data.bio.rank}}" data-dtype="text" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="data.bio.rads" class="resource-label">Rads:</label>
+                        </td>
+                        <td>
+                            <input type="text" name="data.bio.rads" value="{{data.bio.rads}}" data-dtype="text" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="data.bio.load" class="resource-label">Load:</label>
+                        </td>
+                        <td>
+                            <input type="text" name="data.bio.load" value="{{data.bio.load}}" data-dtype="text" />
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div>
+                <div>
+                    <label class="resource-label">Contacts:</label>
+                    <!-- {{editor content=data.history target="data.contacts" button=true owner=owner editable=editable}} -->
+                    <textarea id="data.contacts" name="data.contacts" rows="10">{{data.contacts}}</textarea>
+                    <hr />
+                </div>
+
+                <div>
+                    <label class="resource-label">History:</label>
+                    <!-- {{editor content=data.history target="data.history" button=true owner=owner editable=editable}} -->
+                    <textarea id="data.history" name="data.history" rows="20">{{data.history}}</textarea>
+                    <hr/>
+                </div>
+
+                <div>
+                    <label class="resource-label">Notes:</label>
+                    <textarea id="data.notes" name="data.notes" rows="20">{{data.notes}}</textarea>
+                    <hr />
+                </div>
+                
+                <div>
+                    <label class="resource-label">Gear:</label>
+                    <textarea id="data.gear" name="data.gear" rows="20">{{data.gear}}</textarea>
+                </div>
+            </div>
+
         </div>
-        
+
         {{!-- Skills Tab --}}
         <div class="tab skill-list" data-group="primary" data-tab="skills">
-            
+
             <div class="skills grid grid-3col">
                 {{#each data.attributes as |group akey|}}
                 <div>
                     <div class="attribute flexrow flex-group-center">
                         <label for="data.attributes.{{akey}}.value" class="resource-label">{{akey}}</label>
-                        <input type="number" name="data.attributes.{{akey}}.value" value="{{group.value}}" data-dtype="Number"/>
+                        <input type="number" name="data.attributes.{{akey}}.value" value="{{group.value}}"
+                            data-dtype="Number" />
                     </div>
                     <table table-layout="fixed">
                         {{#each skills as |skill skey|}}
                         <tr>
                             <td class="skill_name_column">
                                 {{#if ../../options.editmode}}
-                                <input name="data.attributes.{{akey}}.skills.{{skey}}.name" type="text" value="{{skill.name}}" placeholder="new skill"/></td>
-                                <td class="skill_value_column"><a><img class="deleteskill" data-group="{{akey}}" data-skill_id="{{skey}}" src="icons/svg/bones.svg"  height="24px" width="24px"/></a></td>
-                                {{else}}
-                                <label for="data.attributes.{{akey}}.skills.{{skey}}.name" class="resource-label skill rollable" data-type="custom_skill" data-skill_name="{{skill.name}}" data-skill_value="{{skill.value}}" data-attribute_name="{{akey}}" data-attribute_value="{{group.value}}">{{skill.name}}</label>
-                                <td class="skill_value_column"><input type="number" name="data.attributes.{{akey}}.skills.{{skey}}.value" value="{{skill.value}}" data-dtype="Number" placeholder="untrained"/></td>
-                                {{/if}}
-                            
-                            
+                                <input name="data.attributes.{{akey}}.skills.{{skey}}.name" type="text"
+                                    value="{{skill.name}}" placeholder="new skill" />
+                            </td>
+                            <td class="skill_value_column"><a><img class="deleteskill" data-group="{{akey}}"
+                                        data-skill_id="{{skey}}" src="icons/svg/bones.svg" height="24px"
+                                        width="24px" /></a></td>
+                            {{else}}
+                            <label for="data.attributes.{{akey}}.skills.{{skey}}.name"
+                                class="resource-label skill rollable" data-type="custom_skill"
+                                data-skill_name="{{skill.name}}" data-skill_value="{{skill.value}}"
+                                data-attribute_name="{{akey}}"
+                                data-attribute_value="{{group.value}}">{{skill.name}}</label>
+                            <td class="skill_value_column"><input type="number"
+                                    name="data.attributes.{{akey}}.skills.{{skey}}.value" value="{{skill.value}}"
+                                    data-dtype="Number" placeholder="untrained" /></td>
+                            {{/if}}
+
+
                         </tr>
                         {{/each}}
                     </table>
@@ -66,86 +186,164 @@
                     <button class="ability-mod addskill" data-group="{{akey}}">New {{akey}} skill</button>
                     {{/if}}
                 </div>
-                
+
                 {{/each}}
-                
+
             </div>
             <button type="submit" class="toggleeditmode">TOGGLE EDIT MODE</button>
-            
+
         </div>
-        
+
         {{!-- Health Tab --}}
         <div class="tab health" data-group="primary" data-tab="health">
-        <table>
-            <tr>
-                <th>part</th>
-                <th>scratch</th>
-                <th>slight</th>
-                <th>serious</th>
-                <th>critical</th>
-            </tr>
-            {{#each data.health.parts as |part key|}}
-            <tr>
-                <td>
-                    <div class="flexcol">
-                        <label for="data.health.parts.{{key}}.value">{{key}}</label>
-                        <input type="number" name="data.health.parts.{{key}}.value" value="{{part.value}}" data-dtype="Number"/>
-                    </div>
-                </td>
-                <td>
-                    <div class="flexcol">
-                        <input type="checkbox" name="data.health.parts.{{key}}.check1" {{checked part.check1}}/>
-                        <label>{{part.thr_1}}</label>
-                    </div>
-                </td>
-                <td>
-                    <div class="flexcol">
-                        <input type="checkbox" name="data.health.parts.{{key}}.check2" {{checked part.check2}}/>
-                        <label>{{part.thr_2}}</label>
-                    </div>
-                </td>
-                <td>
-                    <div class="flexcol">
-                        <input type="checkbox" name="data.health.parts.{{key}}.check3" {{checked part.check3}}/>
-                        <label>{{part.thr_3}}</label>
-                    </div>
-                </td>
-                <td>
-                    <div class="flexcol">
-                        <input type="checkbox" name="data.health.parts.{{key}}.check4" {{checked part.check4}}/>
-                        <label>{{part.thr_4}}</label>
-                    </div>
-                </td>
+            <table>
+                <tr>
+                    <th>part</th>
+                    <th>scratch</th>
+                    <th>slight</th>
+                    <th>serious</th>
+                    <th>critical</th>
+                </tr>
+                {{#each data.health.parts as |part key|}}
+                <tr>
+                    <td>
+                        <div class="flexcol">
+                            <label for="data.health.parts.{{key}}.value">{{key}}</label>
+                            <input type="number" name="data.health.parts.{{key}}.value" value="{{part.value}}"
+                                data-dtype="Number" />
+                        </div>
+                    </td>
+                    <td>
+                        <div class="flexcol">
+                            <input type="checkbox" name="data.health.parts.{{key}}.check1" {{checked part.check1}} />
+                            <label>{{part.thr_1}}</label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="flexcol">
+                            <input type="checkbox" name="data.health.parts.{{key}}.check2" {{checked part.check2}} />
+                            <label>{{part.thr_2}}</label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="flexcol">
+                            <input type="checkbox" name="data.health.parts.{{key}}.check3" {{checked part.check3}} />
+                            <label>{{part.thr_3}}</label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="flexcol">
+                            <input type="checkbox" name="data.health.parts.{{key}}.check4" {{checked part.check4}} />
+                            <label>{{part.thr_4}}</label>
+                        </div>
+                    </td>
 
 
-            </tr>
-            {{/each}}
-        </table>
+                </tr>
+                {{/each}}
+            </table>
         </div>
 
         {{!-- Owned Items Tab --}}
-        <div class="tab items" data-group="primary" data-tab="items">
-            <ol class="items-list">
-                <li class="item flexrow item-header">
-                  <div class="item-image"></div>
-                  <div class="item-name">Name</div>
-                  <div class="item-controls">
-                    <a class="item-control item-create" title="Create item" data-type="item"><i class="fas fa-plus"></i> Add item</a>
-                  </div>
-                </li>
-            {{#each actor.items as |item id|}}
-                <li class="item flexrow" data-item-id="{{item._id}}">
-                    <div class="item-image"><img src="{{item.img}}" title="{{item.name}}" width="24" height="24"/></div>
-                    <h4 class="item-name">{{item.name}}</h4>
-                    <div class="item-controls">
-                        <a class="item-control item-edit" title="Edit Item"><i class="fas fa-edit"></i></a>
-                        <a class="item-control item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>
-                    </div>
-                </li>
-            {{/each}}
-            </ol>
+        <div class="tab combat" data-group="primary" data-tab="combat">
+          <div>
+            <table class="collapsed">
+                <colgroup class="table-group" >
+                    <col span="9"/>
+                </colgroup>
+                <colgroup class="table-group">
+                    <col span="3"/>
+                </colgroup>
+                <colgroup class="table-group">
+                    <col span="2"/>
+                </colgroup>
+                <tr>
+                    <th colspan="9">Missile Weapon Data</th>
+                    <th colspan="3">Mag</th>
+                    <th colspan="2">Recoil</th>
+                </tr>
+                <tr>
+                    <th></th>
+                    <th>Name</th>
+                    <th>Ast</th>
+                    <th>Rcl</th>
+                    <th>ROF</th>
+                    <th>Dam</th>
+                    <th>Pen</th>
+                    <th>Blk</th>
+                    <th>Rng</th>
+                    <th>Full</th>
+                    <th>Load</th>
+                    <th>Mags</th>
+                    <th>SS</th>
+                    <th>Brst</th>
+                </tr>
+                {{#each data.missile_weapons as |weapon key|}}
+                <tr>
+                    <td style="overflow: hidden;padding-right:2px;"><a > <img class="rollable" data-type="attack-fire" data-weapon={{key}}  src="icons/svg/d20-black.svg" style="max-width:24px; height:auto; display:block;"/></td>
+                
+                    <td><input type="text" name="data.missile_weapons.{{key}}.weapon" value="{{weapon.weapon}}" data-dtype="text" /></td>
+                    
+                    <td><input type="number" name="data.missile_weapons.{{key}}.asset" value="{{weapon.asset}}" data-dtype="number" /></td>
+                    
+                    
+                    <td><input type="number" name="data.missile_weapons.{{key}}.recoil_mod" value="{{weapon.recoil_mod}}" data-dtype="number" /></a></td>
+                    
+                    <td><input type="number" name="data.missile_weapons.{{key}}.rof" value="{{weapon.rof}}" data-dtype="number" /></td>
+                    
+                    <td><input type="number" name="data.missile_weapons.{{key}}.damage" value="{{weapon.damage}}" data-dtype="number" /></td>
+                    
+                    <td><input type="text" name="data.missile_weapons.{{key}}.pen" value="{{weapon.pen}}" data-dtype="text" /></td>
+                    
+                    <td><input type="number" name="data.missile_weapons.{{key}}.bulk" value="{{weapon.bulk}}" data-dtype="number" /></td>
+                    
+                    <td><input type="number" name="data.missile_weapons.{{key}}.rng" value="{{weapon.rng}}" data-dtype="number" /></td>
+                    
+                    <td><input type="number" name="data.missile_weapons.{{key}}.mag.full" value="{{weapon.mag.full}}" data-dtype="number" /></td>
+                    
+                    <td><input type="number" name="data.missile_weapons.{{key}}.mag.current" value="{{weapon.mag.current}}" data-dtype="number" /></td>
+                    
+                    <td><input type="number" name="data.missile_weapons.{{key}}.mag.load" value="{{weapon.mag.load}}" data-dtype="number" /></td>
+                    
+                    <td><input type="number" name="data.missile_weapons.{{key}}.recoil.ss" value="{{weapon.recoil.ss}}" data-dtype="number" /></td>
+                    
+                    <td><input type="number" name="data.missile_weapons.{{key}}.recoil.burst" value="{{weapon.recoil.burst}}" data-dtype="number" /></td>
+                </tr>
+                {{/each}}
+            </table>
+          </div>
+          <div>
+            <span>
+              <table class="collapsed">
+                <span>Melee Weapon Data</span>
+                
+                <tr>
+                    <th></th>
+                    <th>Name</th>
+                    <th>Rng</th>
+                    <th>Ast</th>
+                    <th>Damage</th>
+                    <th>wt</th>
+                </tr>
+                {{#each data.melee_weapons as |weapon key|}}
+                <tr>
+                    <td style="overflow: hidden;padding-right:2px;"><a > <img class="rollable" data-type="attack-melee" data-weapon={{key}}  src="icons/svg/d20-black.svg" style="max-width:24px; height:auto; display:block;"/></td>
+                
+                    <td><input type="text" name="data.melee_weapons.{{key}}.weapon" value="{{weapon.weapon}}" data-dtype="text" /></td>
+                    
+                    <td><input type="text" name="data.melee_weapons.{{key}}.range" value="{{weapon.range}}" data-dtype="text" /></td>
+                    
+                    <td><input type="number" name="data.melee_weapons.{{key}}.asset" value="{{weapon.asset}}" data-dtype="number" /></a></td>
+                    
+                    <td><input type="text" name="data.melee_weapons.{{key}}.damage" value="{{weapon.damage}}" data-dtype="text" /></td>
+                    
+                    <td><input type="number" name="data.melee_weapons.{{key}}.wt" value="{{weapon.wt}}" data-dtype="number" /></td>
+                    
+                </tr>
+                {{/each}}
+              </table>
+            </span>
+          </div>
         </div>
-
     </section>
 </form>
-

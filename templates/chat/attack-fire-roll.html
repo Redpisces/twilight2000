@@ -1,0 +1,30 @@
+ 
+<div class="t2k chat-card roll-card" />
+  <header class="card-header flexrow">
+    <div class="flexcol">
+      <span>{{actor.name}}</span>
+      <span>Weapon Attack Roll: {{gun.weapon}}</span>
+    </div>
+  </header>
+  <hr/>
+  <div class="card-content">
+    <div class="flexrow">
+      <span>Asset:</span> <span>{{gun.asset}}x{{difficulty.value}}={{target}}</span>
+    </div>
+    <div class="flexrow">
+      <span>Rolled:</span> <span>{{roll}}</span>
+    </div>
+    <div class="flexrow">
+      <span>Result:</span> <span>{{result}}</span>
+    </div>
+    <div class="flexrow">
+      <span>Location:</span> <span>{{location}}</span>
+    </div>
+    <div class="flexrow">
+      <span>Details:</span> 
+      <div style="word-wrap: break-word;">
+      ({{formula}})={{#each details}}{{this.result}}{{#unless @last}} + {{/unless}}{{/each}}
+      </div>
+    </div>
+  </div>
+</div>

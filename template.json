@@ -1,53 +1,528 @@
 {
-  "Actor": {
-    "types": ["character"],
-    "templates": {
-      "base": {
-       
+  "Actor":{
+    "types":[
+      "character"
+    ],
+    "templates":{
+      "base":{
+        
       }
     },
-    "character": {
-      "templates": ["base"],
-      "biography": "",
-      
-      "attributes":{"str":{"value":0,"skills":{"aircraft_mechanic":{"name":"Aircraft Mechanic","value":null},"archery":{"name":"Archery","value":null},"armed_martial_arts":{"name":"Armed Martial Arts","value":null},"autogun":{"name":"Autogun","value":null},"grenade_launcher":{"name":"Grenade Launcher","value":null},"heavy_artillery":{"name":"Heavy Artillery","value":null},"heavy_gun":{"name":"Heavy Gun","value":null},"mechanic":{"name":"Mechanic","value":null},"small_arms_pistol":{"name":"Small Arms Pistol","value":null},"small_arms_rifle":{"name":"Small Arms Rifle","value":null},"thrown_weapon":{"name":"Thrown Weapon","value":null},"unarmed_martial_arts":{"name":"Unarmed Martial Arts","value":null}}},"con":{"value":0,"skills":{"climbing":{"name":"Climbing","value":null},"combat_engineer":{"name":"Combat Engineer","value":null},"parachute":{"name":"Parachute","value":null},"riding":{"name":"Riding","value":null},"scuba":{"name":"Scuba","value":null},"small_watercraft":{"name":"Small Watercraft","value":null},"swimming":{"name":"Swimming","value":null}}},"agi":{"value":0,"skills":{"acrobatics":{"name":"Acrobatics","value":null},"forgery":{"name":"Forgery","value":null},"ground_vehicle_motorcycle":{"name":"Ground Vehicle Motorcycle","value":null},"ground_vehicle_tracked":{"name":"Ground Vehicle Tracked","value":null},"ground_vehicle_wheeled":{"name":"Ground Vehicle Wheeled","value":null},"gunsmith":{"name":"Gunsmith","value":null},"hovercraft":{"name":"Hovercraft","value":null},"intrusion":{"name":"Intrusion","value":null},"machinist":{"name":"Machinist","value":null},"pilot_fixed-wing":{"name":"Pilot Fixed-Wing","value":null},"pilot_rotary-wing":{"name":"Pilot Rotary-Wing","value":null},"snow_skiing":{"name":"Snow Skiing","value":null},"stealth":{"name":"Stealth","value":null},"tac_missile":{"name":"Tac Missile","value":null},"warhead":{"name":"Warhead","value":null}}},"edu":{"value":0,"skills":{"biology":{"name":"Biology","value":null},"chemistry":{"name":"Chemistry","value":null},"civil_engineer":{"name":"Civil Engineer","value":null},"computer":{"name":"Computer","value":null},"electronics":{"name":"Electronics","value":null},"excavation":{"name":"Excavation","value":null},"geology":{"name":"Geology","value":null},"medical_diagnosis":{"name":"Medical Diagnosis","value":null},"medical_trauma_aid":{"name":"Medical Trauma Aid","value":null},"medical_surgery":{"name":"Medical Surgery","value":null},"metallurgy":{"name":"Metallurgy","value":null},"meteorology":{"name":"Meteorology","value":null}}},"cha":{"value":0,"skills":{"disguise":{"name":"Disguise","value":null},"instruction":{"name":"Instruction","value":null},"interrogation":{"name":"Interrogation","value":null},"leadership":{"name":"Leadership","value":null},"persuasion":{"name":"Persuasion","value":null}}},"int":{"value":0,"skills":{"farming":{"name":"Farming","value":null},"forward_observer":{"name":"Forward Observer","value":null},"navigation":{"name":"Navigation","value":null},"observation":{"name":"Observation","value":null},"scrounging":{"name":"Scrounging","value":null},"survival":{"name":"Survival","value":null},"tracking":{"name":"Tracking","value":null}}}},
-
-
-      "health":{"parts":{"head":{"value":0,"check1":false,"check2":false,"check3":false,"check4":false},"chest":{"value":0,"check1":false,"check2":false,"check3":false,"check4":false},"abdomen":{"value":0,"check1":false,"check2":false,"check3":false,"check4":false},"r_arm":{"value":0,"check1":false,"check2":false,"check3":false,"check4":false},"l_arm":{"value":0,"check1":false,"check2":false,"check3":false,"check4":false},"r_leg":{"value":0,"check1":false,"check2":false,"check3":false,"check4":false},"l_leg":{"value":0,"check1":false,"check2":false,"check3":false,"check4":false}}}
-
+    "character":{
+      "templates":[
+        "base"
+      ],
+      "history":"",
+      "contacts":"",
+      "notes":"",
+      "derived_values":{
+        "initative":"",
+        "throw_range":0,
+        "load":0,
+        "unarmed_damage":0
+      },
+      "gear":"",
+      "missile_weapons":{
+        "weapon_1":{
+          "weapon":"",
+          "asset":0,
+          "recoil_mod":0,
+          "rof":"",
+          "damage":0,
+          "pen":"",
+          "bulk":0,
+          "mag":{
+            "full":"",
+            "current":0,
+            "load":""
+          },
+          "recoil":{
+            "ss":0,
+            "burst":0
+          },
+          "rng":0
+        },
+        "weapon_2":{
+          "weapon":"",
+          "asset":0,
+          "recoil_mod":0,
+          "rof":"",
+          "damage":0,
+          "pen":"",
+          "bulk":0,
+          "mag":{
+            "full":"",
+            "current":0,
+            "load":""
+          },
+          "recoil":{
+            "ss":0,
+            "burst":0
+          },
+          "rng":0
+        },
+        "weapon_3":{
+          "weapon":"",
+          "asset":0,
+          "recoil_mod":0,
+          "rof":"",
+          "damage":0,
+          "pen":"",
+          "bulk":0,
+          "mag":{
+            "full":"",
+            "current":0,
+            "load":""
+          },
+          "recoil":{
+            "ss":0,
+            "burst":0
+          },
+          "rng":0
+        },
+        "weapon_4":{
+          "weapon":"",
+          "asset":0,
+          "recoil_mod":0,
+          "rof":"",
+          "damage":0,
+          "pen":"",
+          "bulk":0,
+          "mag":{
+            "full":"",
+            "current":0,
+            "load":""
+          },
+          "recoil":{
+            "ss":0,
+            "burst":0
+          },
+          "rng":0
+        },
+        "weapon_5":{
+          "weapon":"",
+          "asset":0,
+          "recoil_mod":0,
+          "rof":"",
+          "damage":0,
+          "pen":"",
+          "bulk":0,
+          "mag":{
+            "full":"",
+            "current":0,
+            "load":""
+          },
+          "recoil":{
+            "ss":0,
+            "burst":0
+          },
+          "rng":0
+        }
+      },
+      "melee_weapons":{
+        "weapon_1":{
+          "weapon":"",
+          "hit_mod":0,
+          "asset":0,
+          "range":"",
+          "damage":"",
+          "wt":0
+        },
+        "weapon_2":{
+          "weapon":"",
+          "hit_mod":0,
+          "asset":0,
+          "range":"",
+          "damage":"",
+          "wt":0
+        },
+        "weapon_3":{
+          "weapon":"",
+          "hit_mod":0,
+          "asset":0,
+          "range":"",
+          "damage":"",
+          "wt":0
+        }
+      },
+      "burst_calculator":{
+        "num_bursts":0,
+        "rof":0,
+        "range":0,
+        "recoil":0,
+        "num_rolls":0
+      },
+      "bio":{
+        "player":"",
+        "character":"",
+        "nationality":"",
+        "gender":"",
+        "age":"",
+        "branch":"",
+        "weight":"",
+        "throw_range":"",
+        "initiative":"",
+        "rank":"",
+        "rads":"",
+        "load":""
+      },
+      "attributes":{
+        "str":{
+          "value":0,
+          "skills":{
+            "aircraft_mechanic":{
+              "name":"Aircraft Mechanic",
+              "value":null
+            },
+            "archery":{
+              "name":"Archery",
+              "value":null
+            },
+            "armed_martial_arts":{
+              "name":"Armed Martial Arts",
+              "value":null
+            },
+            "autogun":{
+              "name":"Autogun",
+              "value":null
+            },
+            "grenade_launcher":{
+              "name":"Grenade Launcher",
+              "value":null
+            },
+            "heavy_artillery":{
+              "name":"Heavy Artillery",
+              "value":null
+            },
+            "heavy_gun":{
+              "name":"Heavy Gun",
+              "value":null
+            },
+            "mechanic":{
+              "name":"Mechanic",
+              "value":null
+            },
+            "small_arms_pistol":{
+              "name":"Small Arms Pistol",
+              "value":null
+            },
+            "small_arms_rifle":{
+              "name":"Small Arms Rifle",
+              "value":null
+            },
+            "thrown_weapon":{
+              "name":"Thrown Weapon",
+              "value":null
+            },
+            "unarmed_martial_arts":{
+              "name":"Unarmed Martial Arts",
+              "value":null
+            }
+          }
+        },
+        "con":{
+          "value":0,
+          "skills":{
+            "climbing":{
+              "name":"Climbing",
+              "value":null
+            },
+            "combat_engineer":{
+              "name":"Combat Engineer",
+              "value":null
+            },
+            "parachute":{
+              "name":"Parachute",
+              "value":null
+            },
+            "riding":{
+              "name":"Riding",
+              "value":null
+            },
+            "scuba":{
+              "name":"Scuba",
+              "value":null
+            },
+            "small_watercraft":{
+              "name":"Small Watercraft",
+              "value":null
+            },
+            "swimming":{
+              "name":"Swimming",
+              "value":null
+            }
+          }
+        },
+        "agi":{
+          "value":0,
+          "skills":{
+            "acrobatics":{
+              "name":"Acrobatics",
+              "value":null
+            },
+            "forgery":{
+              "name":"Forgery",
+              "value":null
+            },
+            "ground_vehicle_motorcycle":{
+              "name":"Ground Vehicle Motorcycle",
+              "value":null
+            },
+            "ground_vehicle_tracked":{
+              "name":"Ground Vehicle Tracked",
+              "value":null
+            },
+            "ground_vehicle_wheeled":{
+              "name":"Ground Vehicle Wheeled",
+              "value":null
+            },
+            "gunsmith":{
+              "name":"Gunsmith",
+              "value":null
+            },
+            "hovercraft":{
+              "name":"Hovercraft",
+              "value":null
+            },
+            "intrusion":{
+              "name":"Intrusion",
+              "value":null
+            },
+            "machinist":{
+              "name":"Machinist",
+              "value":null
+            },
+            "pilot_fixed-wing":{
+              "name":"Pilot Fixed-Wing",
+              "value":null
+            },
+            "pilot_rotary-wing":{
+              "name":"Pilot Rotary-Wing",
+              "value":null
+            },
+            "snow_skiing":{
+              "name":"Snow Skiing",
+              "value":null
+            },
+            "stealth":{
+              "name":"Stealth",
+              "value":null
+            },
+            "tac_missile":{
+              "name":"Tac Missile",
+              "value":null
+            },
+            "warhead":{
+              "name":"Warhead",
+              "value":null
+            }
+          }
+        },
+        "edu":{
+          "value":0,
+          "skills":{
+            "biology":{
+              "name":"Biology",
+              "value":null
+            },
+            "chemistry":{
+              "name":"Chemistry",
+              "value":null
+            },
+            "civil_engineer":{
+              "name":"Civil Engineer",
+              "value":null
+            },
+            "computer":{
+              "name":"Computer",
+              "value":null
+            },
+            "electronics":{
+              "name":"Electronics",
+              "value":null
+            },
+            "excavation":{
+              "name":"Excavation",
+              "value":null
+            },
+            "geology":{
+              "name":"Geology",
+              "value":null
+            },
+            "medical_diagnosis":{
+              "name":"Medical Diagnosis",
+              "value":null
+            },
+            "medical_trauma_aid":{
+              "name":"Medical Trauma Aid",
+              "value":null
+            },
+            "medical_surgery":{
+              "name":"Medical Surgery",
+              "value":null
+            },
+            "metallurgy":{
+              "name":"Metallurgy",
+              "value":null
+            },
+            "meteorology":{
+              "name":"Meteorology",
+              "value":null
+            }
+          }
+        },
+        "cha":{
+          "value":0,
+          "skills":{
+            "disguise":{
+              "name":"Disguise",
+              "value":null
+            },
+            "instruction":{
+              "name":"Instruction",
+              "value":null
+            },
+            "interrogation":{
+              "name":"Interrogation",
+              "value":null
+            },
+            "leadership":{
+              "name":"Leadership",
+              "value":null
+            },
+            "persuasion":{
+              "name":"Persuasion",
+              "value":null
+            }
+          }
+        },
+        "int":{
+          "value":0,
+          "skills":{
+            "farming":{
+              "name":"Farming",
+              "value":null
+            },
+            "forward_observer":{
+              "name":"Forward Observer",
+              "value":null
+            },
+            "navigation":{
+              "name":"Navigation",
+              "value":null
+            },
+            "observation":{
+              "name":"Observation",
+              "value":null
+            },
+            "scrounging":{
+              "name":"Scrounging",
+              "value":null
+            },
+            "survival":{
+              "name":"Survival",
+              "value":null
+            },
+            "tracking":{
+              "name":"Tracking",
+              "value":null
+            }
+          }
+        }
+      },
+      "health":{
+        "parts":{
+          "head":{
+            "value":0,
+            "check1":false,
+            "check2":false,
+            "check3":false,
+            "check4":false
+          },
+          "chest":{
+            "value":0,
+            "check1":false,
+            "check2":false,
+            "check3":false,
+            "check4":false
+          },
+          "abdomen":{
+            "value":0,
+            "check1":false,
+            "check2":false,
+            "check3":false,
+            "check4":false
+          },
+          "r_arm":{
+            "value":0,
+            "check1":false,
+            "check2":false,
+            "check3":false,
+            "check4":false
+          },
+          "l_arm":{
+            "value":0,
+            "check1":false,
+            "check2":false,
+            "check3":false,
+            "check4":false
+          },
+          "r_leg":{
+            "value":0,
+            "check1":false,
+            "check2":false,
+            "check3":false,
+            "check4":false
+          },
+          "l_leg":{
+            "value":0,
+            "check1":false,
+            "check2":false,
+            "check3":false,
+            "check4":false
+          }
+        }
+      }
     }
   },
-  "Item": {
-    "types": ["item","gun"],
-    "templates": {
-      "base": {
-        "description": ""
+  "Item":{
+    "types":[
+      "item",
+      "gun"
+    ],
+    "templates":{
+      "base":{
+        "description":""
       }
     },
-    "item": {
-      "templates": ["base"],
-      "quantity": 1,
-      "weight": 0
+    "item":{
+      "templates":[
+        "base"
+      ],
+      "quantity":1,
+      "weight":0
     },
-    "gun": {
-        "templates": ["base"],
-        "details":{
-            "weight": 0,
-            "mag_type":"",
-            "ammo_type":"",
-            "price":""
-        },
-        "attributes":{
-            "rof":"sa",
-            "dam":0,
-            "pen":"nil",
-            "blk":0,
-            "mag_load":0,
-            "mag_max":1,
-            "rcl_ss":"-",
-            "rcl_brst":"-",
-            "rng":0
-            }
+    "gun":{
+      "templates":[
+        "base"
+      ],
+      "details":{
+        "weight":0,
+        "mag_type":"",
+        "ammo_type":"",
+        "price":""
+      },
+      "attributes":{
+        "rof":"sa",
+        "dam":0,
+        "pen":"nil",
+        "blk":0,
+        "mag_load":0,
+        "mag_max":1,
+        "rcl_ss":"-",
+        "rcl_brst":"-",
+        "rng":0
+      }
     }
   }
 }

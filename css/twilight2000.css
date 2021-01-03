@@ -194,6 +194,14 @@
   background-color: coral;
 }
 
+.twilight2000 table.collapsed {
+  border-collapse: collapse;
+}
+
+.twilight2000 .table-group {
+  border: 1px solid darkgoldenrod;
+}
+
 .twilight2000 .resource-label {
   font-weight: bold;
   text-transform: uppercase;
