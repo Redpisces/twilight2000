@@ -372,13 +372,15 @@ async function _skillroll(actorId,dataset={}){
 
   if (skill.untrained) {dataset.difficulty.value=dataset.difficulty.value/2;}
 
-  let target=-1;
+  /**let target=-1;
   if (dataset.max_asset){
     target=Math.min(Math.max((skill.value+attribute.value)*dataset.difficulty.value,1),dataset.max_asset);
   } else {
     target=Math.min(Math.max((skill.value+attribute.value)*dataset.difficulty.value,1),19);
   }
-  console.log(skill.value+"+"+attribute.value+"*"+dataset.difficulty.value,target);
+  console.log(skill.value+"+"+attribute.value+"*"+dataset.difficulty.value,target);*/
+  let target=(skill.value+attribute.value)*dataset.difficulty.value;
+  console.log((skill.value+attribute.value)*dataset.difficulty.value);
   
   let data={
     actor: game.actors.get(actorId),
