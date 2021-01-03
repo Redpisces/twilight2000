@@ -374,9 +374,9 @@ async function _skillroll(actorId,dataset={}){
 
   let target=-1;
   if (dataset.max_asset){
-    target=Math.min(Math.max(skill.value+attribute.value)*dataset.difficulty.value,1),dataset.max_asset);
+    target=Math.min(Math.max((skill.value+attribute.value)*dataset.difficulty.value,1),dataset.max_asset);
   } else {
-    target=Math.min(Math.max(skill.value+attribute.value)*dataset.difficulty.value,1),19);
+    target=Math.min(Math.max((skill.value+attribute.value)*dataset.difficulty.value,1),19);
   }
   
   let data={
