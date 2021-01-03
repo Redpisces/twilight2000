@@ -291,7 +291,6 @@ async function _attackMeleeRoll(actorId,dataset={}){
   let target=gun.asset*dataset.difficulty.value;
   let damageRoll=new Roll(gun.damage);
   target= Math.min(Math.max(target,1),19);
-
   await roll.evaluate();
   
   let data={
@@ -380,7 +379,6 @@ async function _skillroll(actorId,dataset={}){
     target=Math.min(Math.max(skill.value+attribute.value)*dataset.difficulty.value,1),19);
   }
   
-   
   let data={
     actor: game.actors.get(actorId),
     skill:skill,
