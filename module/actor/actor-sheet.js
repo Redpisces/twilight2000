@@ -379,9 +379,9 @@ async function _skillroll(actorId,dataset={}){
     target=Math.min(Math.max((skill.value+attribute.value)*dataset.difficulty.value,1),19);
   }
   console.log(skill.value+"+"+attribute.value+"*"+dataset.difficulty.value,target);*/
-  let target=(skill.value+attribute.value)*dataset.difficulty.value;
+  let target=(parseInt(skill.value)+parseInt(attribute.value))*parseInt(dataset.difficulty.value);
   console.log(skill.value,attribute.value,dataset.difficulty.value);
-  console.log((skill.value+attribute.value)*dataset.difficulty.value);
+  console.log(target);
   
   let data={
     actor: game.actors.get(actorId),
