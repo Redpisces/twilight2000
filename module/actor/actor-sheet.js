@@ -380,6 +380,7 @@ async function _skillroll(actorId,dataset={}){
   }
   console.log(skill.value+"+"+attribute.value+"*"+dataset.difficulty.value,target);*/
   let target=(skill.value+attribute.value)*dataset.difficulty.value;
+  console.log(skill.value,attribute.value,dataset.difficulty.value);
   console.log((skill.value+attribute.value)*dataset.difficulty.value);
   
   let data={
