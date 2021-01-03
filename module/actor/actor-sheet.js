@@ -291,6 +291,7 @@ async function _attackMeleeRoll(actorId,dataset={}){
   let target=gun.asset*dataset.difficulty.value;
   let damageRoll=new Roll(gun.damage);
   target= Math.min(Math.max(target,1),19);
+
   await roll.evaluate();
   
   let data={
@@ -299,7 +300,7 @@ async function _attackMeleeRoll(actorId,dataset={}){
     difficulty:dataset.difficulty,
     target:target,
     roll:roll.total,
-    location:new Roll("1d6").evaluate().result
+    location:new Roll("1d10").evaluate().result
   }
   await damageRoll.evaluate();
   
@@ -337,7 +338,7 @@ async function _attackFireRoll(actorId,dataset={}){
     difficulty:dataset.difficulty,
     target:target,
     roll:roll.total,
-    location:new Roll("1d6").evaluate().result
+    location:new Roll("1d10").evaluate().result
   }
   await damageRoll.evaluate();
   let pen = (gun.pen) ? gun.pen : "nil";
@@ -374,12 +375,12 @@ async function _skillroll(actorId,dataset={}){
 
   let target=-1;
   if (dataset.max_asset){
-    target=Math.min((skill.value+attribute.value)*dataset.difficulty.value,dataset.max_asset);
+    target=Math.min(Math.max(skill.value+attribute.value)*dataset.difficulty.value,1),dataset.max_asset)
   } else {
-    target=Math.min((skill.value+attribute.value)*dataset.difficulty.value,19);
+    target=Math.min(Math.max(skill.value+attribute.value)*dataset.difficulty.value,1),19)
   }
-  if (target<1){target=1;}
   
+   
   let data={
     actor: game.actors.get(actorId),
     skill:skill,
